@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mond(AI)y Coffee</title>
+  <title>Mond(AI)y Coffee · Atlanta's Weekly AI Meetup</title>
+  <meta name="description" content="A free weekly coffee meetup for AI builders and curious minds in Atlanta. Every Monday at 8:30am at ATDC in Midtown. No RSVP required." />
+  <meta property="og:title" content="Mond(AI)y Coffee · Atlanta's Weekly AI Meetup" />
+  <meta property="og:description" content="A free weekly coffee meetup for AI builders and curious minds. Every Monday at 8:30am at ATDC in Midtown Atlanta. No RSVP required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mondaiycoffee.com/" />
+  <meta property="og:image" content="https://mondaiycoffee.com/images/about-alex-lugo-presentation.jpg" />
+  <meta property="og:site_name" content="Mond(AI)y Coffee" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -70,5 +78,57 @@
     </footer>
 
   </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Mond(AI)y Coffee",
+        "url": "https://mondaiycoffee.com",
+        "logo": "https://mondaiycoffee.com/favicon.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "Adam.Gautsch@atdc.org",
+          "contactType": "organizer"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Mond(AI)y Coffee",
+        "description": "A free weekly coffee meetup for AI builders and curious minds. No RSVP required.",
+        "url": "https://mondaiycoffee.com",
+        "eventSchedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1W",
+          "byDay": "https://schema.org/Monday",
+          "startTime": "08:30",
+          "endTime": "10:00"
+        },
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "isAccessibleForFree": true,
+        "organizer": {
+          "@type": "Organization",
+          "name": "ATDC",
+          "url": "https://atdc.org"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "ATDC",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "75 5th St NW, Suite 2230",
+            "addressLocality": "Atlanta",
+            "addressRegion": "GA",
+            "postalCode": "30308",
+            "addressCountry": "US"
+          }
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
