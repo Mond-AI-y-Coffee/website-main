@@ -1,6 +1,29 @@
 /* ── Components ─────────────────────────────────────────────── */
 @import "./tokens.css";
 
+/* ── Nav ────────────────────────────────────────────────────── */
+.site-nav {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav a {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--amber);
+}
+
 /* ── Hero ───────────────────────────────────────────────────── */
 .hero {
   padding-top: 5rem;
@@ -30,6 +53,21 @@ h2.tagline {
   color: var(--muted);
   max-width: 480px;
   line-height: 1.5;
+}
+
+.hero-contact {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero-contact a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.hero-contact a:hover {
+  text-decoration: underline;
 }
 
 /* ── Divider ────────────────────────────────────────────────── */
@@ -137,6 +175,90 @@ footer {
   color: var(--muted);
   font-style: italic;
   animation: fadeUp 0.7s 0.55s ease both;
+}
+
+/* ── About Page ─────────────────────────────────────────────── */
+.about-body {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.about-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  max-width: 640px;
+  margin-bottom: 1.25rem;
+}
+
+.about-body a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.about-body a:hover {
+  text-decoration: underline;
+}
+
+.about-photo {
+  margin: 2.5rem 0 3rem;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+/* ── Members Grid ───────────────────────────────────────────── */
+#members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.member-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.member-card:hover {
+  border-color: var(--amber);
+  background: rgba(200,117,10,0.04);
+}
+
+.member-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.member-name {
+  display: block;
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.9rem;
+  color: var(--espresso);
+}
+
+.member-bio {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.members-error {
+  color: var(--muted);
+  font-style: italic;
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */
