@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#1e1208"/>
+
+  <!-- Cup body -->
+  <path d="M7 10 L9 23 Q9.2 24.5 10.5 24.5 L21.5 24.5 Q22.8 24.5 23 23 L25 10 Z" fill="#3b2010" stroke="#c8750a" stroke-width="1"/>
+
+  <!-- Cup lip -->
+  <ellipse cx="16" cy="10" rx="9" ry="1.5" fill="#3b2010" stroke="#c8750a" stroke-width="1"/>
+
+  <!-- Handle -->
+  <path d="M23 14 Q27 14 27 17 Q27 20 23 20" fill="none" stroke="#c8750a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- (AI) on cup -->
+  <text x="16" y="19" text-anchor="middle" dominant-baseline="central"
+    font-family="'Cooper Black', Georgia, serif"
+    font-size="6" fill="#e8a020">(AI)</text>
+</svg>
