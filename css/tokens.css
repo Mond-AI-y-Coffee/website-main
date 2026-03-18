@@ -1,0 +1,10 @@
+/* ── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --cream:    #f5f0e8;
+  --espresso: #1e1208;
+  --brown:    #3b2010;
+  --amber:    #c8750a;
+  --gold:     #e8a020;
+  --muted:    #7a5c3a;
+  --rule:     #c9b89a;
+}

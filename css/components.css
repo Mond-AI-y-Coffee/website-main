@@ -1,0 +1,146 @@
+/* ── Components ─────────────────────────────────────────────── */
+@import "./tokens.css";
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  animation: fadeUp 0.7s ease both;
+}
+
+h1 {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+}
+
+h1 .ai-bracket {
+  color: var(--amber);
+}
+
+h2.tagline {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+.rule {
+  border: none;
+  border-top: 2px solid var(--rule);
+  margin: 2.5rem 0;
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+
+/* ── Next Meeting ───────────────────────────────────────────── */
+.next-meeting {
+  background: var(--brown);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.next-meeting h3 {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-weight: 400;
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.next-meeting .meeting-date {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
+  color: #fff;
+}
+
+.presenter-line {
+  font-size: 1rem;
+  color: rgba(245,240,232,0.85);
+}
+
+.presenter-line strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.presenter-line a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232,160,32,0.4);
+  transition: border-color 0.2s;
+}
+
+.presenter-line a:hover {
+  border-color: var(--gold);
+}
+
+/* ── Basics Grid ────────────────────────────────────────────── */
+.basics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.75rem;
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+
+.basics-item {
+  border-top: 3px solid var(--amber);
+  padding-top: 1rem;
+}
+
+.basics-item .label {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.4rem;
+}
+
+.basics-item p {
+  font-size: 0.95rem;
+  color: var(--brown);
+  line-height: 1.55;
+}
+
+.basics-item a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.basics-item a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  animation: fadeUp 0.7s 0.55s ease both;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero::before, .hero::after { display: none; }
+  .next-meeting { padding: 1.75rem 1.5rem; }
+}
