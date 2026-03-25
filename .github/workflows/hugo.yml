@@ -41,7 +41,7 @@ jobs:
 
       - name: Check HTML (catches broken links on every push)
         run: |
-          gem install html-proofer --no-document
+          sudo gem install html-proofer --no-document
           htmlproofer website-hugo/public \
             --disable-external \
             --ignore-urls "/^#/" \
