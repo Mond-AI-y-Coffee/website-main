@@ -25,7 +25,8 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''branch:'''', d.get\\(''''default_branch''''\\)\\); print\\(''''private:'''', d.get\\(''''private''''\\)\\)\")",
       "Bash(curl -si https://api.github.com/repos/Mond-AI-y-Coffee/website-main)",
       "Bash(curl -s https://api.github.com/repos/Mond-AI-y-Coffee/website-main/contents/)",
-      "Bash(curl -s \"https://api.github.com/repos/Mond-AI-y-Coffee/website-main/git/trees/HEAD?recursive=1\")"
+      "Bash(curl -s \"https://api.github.com/repos/Mond-AI-y-Coffee/website-main/git/trees/HEAD?recursive=1\")",
+      "Bash(find \"/c/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/content/notes\" -name \"*.md\")"
     ]
   }
 }
