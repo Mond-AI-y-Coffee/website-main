@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+  <section class="speaker-term" aria-label="Sessions by {{ .Title }}">
+    <div class="notes-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <div class="notes-list-item">
+        <span class="notes-list-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <a class="notes-list-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+{{ end }}

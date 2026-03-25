@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+  <article class="notes-post">
+
+    <header class="notes-header">
+      {{ range .Params.speakers }}
+      <div class="notes-speaker">
+        {{ if $.Params.speaker_url }}
+        <a href="{{ $.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>
+        {{ else }}
+        {{ . }}
+        {{ end }}
+        {{ if $.Params.company }}
+        —
+        {{ if $.Params.company_url }}
+        <a href="{{ $.Params.company_url }}" target="_blank" rel="noopener">{{ $.Params.company }}</a>
+        {{ else }}
+        {{ $.Params.company }}
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+      <div class="notes-date">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+    </header>
+
+    <div class="notes-content about-body">
+      {{ .Content }}
+    </div>
+
+  </article>
+
+{{ end }}

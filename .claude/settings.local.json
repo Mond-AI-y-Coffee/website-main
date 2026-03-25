@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee\")",
+      "Bash(ls \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee/website-main\")",
+      "Bash(curl -s \"https://api.github.com/orgs/Mond-AI-y-Coffee/members\")",
+      "Bash(ls \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee/website-main/images/\")",
+      "Bash(ls \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee/website-main/\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee/website-main/images\")",
+      "Bash(mv \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee/website-main/about-alex-lugo-presentation.jpg\" \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee/website-main/images/about-alex-lugo-presentation.jpg\")",
+      "Bash(find \"C:\\\\Users\\\\Delhome\\\\Documents\\\\GitHub\\\\Mond\\(ai\\)y Coffee\" -name \"*.jpg\")",
+      "Bash(BASE=\"/c/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee\")",
+      "Bash(cp -r \"$BASE/website-main/css/.\" \"$BASE/website-hugo/static/css/\")",
+      "Bash(cp \"$BASE/website-main/js/members.js\" \"$BASE/website-hugo/static/js/members.js\")",
+      "Bash(cp -r \"$BASE/website-main/images/.\" \"$BASE/website-hugo/static/images/\")",
+      "Bash(cp \"$BASE/website-main/favicon.svg\" \"$BASE/website-hugo/static/favicon.svg\")",
+      "Bash(find \"/c/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo\" -type f)",
+      "Bash(hugo version:*)",
+      "Bash(winget list:*)",
+      "Bash(hugo --minify)",
+      "Bash(find \"/c/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/public\" -name \"*.html\")",
+      "Bash(hugo new:*)",
+      "Bash(gh repo:*)",
+      "Bash(curl -s https://api.github.com/repos/Mond-AI-y-Coffee/website-main)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''branch:'''', d.get\\(''''default_branch''''\\)\\); print\\(''''private:'''', d.get\\(''''private''''\\)\\)\")",
+      "Bash(curl -si https://api.github.com/repos/Mond-AI-y-Coffee/website-main)",
+      "Bash(curl -s https://api.github.com/repos/Mond-AI-y-Coffee/website-main/contents/)",
+      "Bash(curl -s \"https://api.github.com/repos/Mond-AI-y-Coffee/website-main/git/trees/HEAD?recursive=1\")"
+    ]
+  }
+}

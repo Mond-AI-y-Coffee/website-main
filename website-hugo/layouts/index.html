@@ -1,0 +1,107 @@
+{{ define "main" }}
+
+  <!-- Next Meeting — auto-pulled from the nearest upcoming notes post -->
+  {{ $today := now.Format "2006-01-02" }}
+  {{ $next := false }}
+  {{ range (where site.RegularPages "Section" "notes").ByDate }}
+    {{ if and (not $next) (ge (.Date.Format "2006-01-02") $today) }}
+      {{ $next = . }}
+    {{ end }}
+  {{ end }}
+  {{ if $next }}
+  <section class="next-meeting" aria-label="Next meeting details">
+    <h3>Next Meeting</h3>
+    <div class="meeting-date">{{ $next.Date.Format "Monday, January 2" }}</div>
+    <p class="presenter-line">
+      <strong>Presenting:</strong>
+      {{ range $next.Params.speakers }}
+      {{ if $next.Params.speaker_url }}<a href="{{ $next.Params.speaker_url }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+      {{ end }}
+      {{ with $next.Params.company }}
+      —
+      {{ if $next.Params.company_url }}<a href="{{ $next.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+      {{ end }}
+    </p>
+  </section>
+  {{ end }}
+
+  <!-- The Basics -->
+  <section class="basics" aria-label="Meetup details">
+    <div class="basics-item">
+      <div class="label">What</div>
+      <p>A weekly coffee meetup for AI builders and those who want to learn</p>
+    </div>
+    <div class="basics-item">
+      <div class="label">When</div>
+      <p>Mondays, 8:30 – 10:00 am</p>
+    </div>
+    <div class="basics-item">
+      <div class="label">Where</div>
+      <p>
+        ATDC<br />
+        <a href="https://maps.google.com/?q=75+5th+St+NW+Suite+2230+Atlanta+GA+30308" target="_blank" rel="noopener">
+          75 5th St NW, Suite 2230<br />Atlanta, GA 30308
+        </a>
+      </p>
+    </div>
+    <div class="basics-item">
+      <div class="label">Why</div>
+      <p>It's time to build cool things</p>
+    </div>
+  </section>
+
+{{ end }}
+
+{{ define "schema" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Mond(AI)y Coffee",
+      "url": "https://mondaiycoffee.com",
+      "logo": "https://mondaiycoffee.com/favicon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "Adam.Gautsch@atdc.org",
+        "contactType": "organizer"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Mond(AI)y Coffee",
+      "description": "A free weekly coffee meetup for AI builders and curious minds. No RSVP required.",
+      "url": "https://mondaiycoffee.com",
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": "https://schema.org/Monday",
+        "startTime": "08:30",
+        "endTime": "10:00"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "isAccessibleForFree": true,
+      "organizer": {
+        "@type": "Organization",
+        "name": "ATDC",
+        "url": "https://atdc.org"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "ATDC",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "75 5th St NW, Suite 2230",
+          "addressLocality": "Atlanta",
+          "addressRegion": "GA",
+          "postalCode": "30308",
+          "addressCountry": "US"
+        }
+      }
+    }
+  ]
+}
+</script>
+{{ end }}

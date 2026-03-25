@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+  <section class="speakers-index" aria-label="All speakers">
+    <div class="speakers-grid">
+      {{ range .Data.Terms.Alphabetical }}
+      <a class="speaker-card" href="{{ .Page.RelPermalink }}">
+        <span class="speaker-name">{{ .Page.Title }}</span>
+        <span class="speaker-count">{{ .Count }} {{ if eq .Count 1 }}session{{ else }}sessions{{ end }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+
+{{ end }}

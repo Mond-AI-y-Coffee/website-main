@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+  <section class="notes-list" aria-label="Session notes archive">
+    {{ range .Pages.ByDate.Reverse }}
+    <div class="notes-list-item">
+      <span class="notes-list-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <a class="notes-list-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ range .Params.speakers }}
+      <a class="notes-list-speaker" href="{{ "/speakers/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="notes-empty">No session notes yet. Check back after the next meeting.</p>
+    {{ end }}
+  </section>
+
+{{ end }}

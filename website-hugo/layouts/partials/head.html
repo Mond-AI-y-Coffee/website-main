@@ -1,0 +1,18 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ if .IsHome }}{{ .Site.Title }} · Atlanta's Weekly AI Meetup{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }} · Atlanta's Weekly AI Meetup{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}" />
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ .Site.BaseURL }}images/about-alex-lugo-presentation.jpg" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.cdnfonts.com/css/cooper-black" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/notes.css" />

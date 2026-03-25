@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+  <section class="faq" aria-label="Frequently asked questions">
+    {{ range .Site.Data.faq }}
+    <details class="faq-item">
+      <summary class="faq-question">{{ .question }}</summary>
+      <p class="faq-answer">
+        {{ if .answer_link }}<a href="{{ .answer_link }}">{{ .answer }}</a>{{ else }}{{ .answer }}{{ end }}
+      </p>
+    </details>
+    {{ end }}
+  </section>
+
+{{ end }}
+
+{{ define "schema" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $item := .Site.Data.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $item.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $item.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}

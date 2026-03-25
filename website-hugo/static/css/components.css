@@ -1,0 +1,400 @@
+/* ── Components ─────────────────────────────────────────────── */
+@import "./tokens.css";
+
+/* ── Nav ────────────────────────────────────────────────────── */
+.site-nav {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav a {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--amber);
+}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  animation: fadeUp 0.7s ease both;
+}
+
+h1 {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+}
+
+h1 .ai-bracket {
+  color: var(--amber);
+}
+
+h2.tagline {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.hero-contact {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero-contact a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.hero-contact a:hover {
+  text-decoration: underline;
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+.rule {
+  border: none;
+  border-top: 2px solid var(--rule);
+  margin: 2.5rem 0;
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+
+/* ── Next Meeting ───────────────────────────────────────────── */
+.next-meeting {
+  background: var(--brown);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.next-meeting h3 {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-weight: 400;
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.next-meeting .meeting-date {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
+  color: #fff;
+}
+
+.presenter-line {
+  font-size: 1rem;
+  color: rgba(245,240,232,0.85);
+}
+
+.presenter-line strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.presenter-line a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232,160,32,0.4);
+  transition: border-color 0.2s;
+}
+
+.presenter-line a:hover {
+  border-color: var(--gold);
+}
+
+/* ── Basics Grid ────────────────────────────────────────────── */
+.basics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.75rem;
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+
+.basics-item {
+  border-top: 3px solid var(--amber);
+  padding-top: 1rem;
+}
+
+.basics-item .label {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.4rem;
+}
+
+.basics-item p {
+  font-size: 0.95rem;
+  color: var(--brown);
+  line-height: 1.55;
+}
+
+.basics-item a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.basics-item a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  animation: fadeUp 0.7s 0.55s ease both;
+}
+
+/* ── About Page ─────────────────────────────────────────────── */
+.about-body {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.about-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  max-width: 640px;
+  margin-bottom: 1.25rem;
+}
+
+.about-body a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.about-body a:hover {
+  text-decoration: underline;
+}
+
+.about-photo {
+  margin: 2.5rem 0 3rem;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.about-photo--float {
+  float: right;
+  margin: 0 0 1.5rem 2rem;
+  width: 52%;
+}
+
+.about-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* ── Get Involved Page ──────────────────────────────────────── */
+.involve-section {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.section-heading {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+}
+
+.info-callout {
+  border-left: 3px solid var(--amber);
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--brown);
+  align-items: baseline;
+}
+
+.info-item .label {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  flex-shrink: 0;
+  width: 3.5rem;
+}
+
+.info-item a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.info-item a:hover {
+  text-decoration: underline;
+}
+
+/* ── Members Grid ───────────────────────────────────────────── */
+#members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.member-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.member-card:hover {
+  border-color: var(--amber);
+  background: rgba(200,117,10,0.04);
+}
+
+.member-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.member-name {
+  display: block;
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.9rem;
+  color: var(--espresso);
+}
+
+.member-bio {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.members-error {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.member-card--join {
+  border-style: dashed;
+  border-color: var(--amber);
+}
+
+.member-card--join:hover {
+  background: rgba(200,117,10,0.06);
+}
+
+.gh-octocat {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  fill: var(--amber);
+}
+
+/* ── FAQ Page ───────────────────────────────────────────────── */
+.faq {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--rule);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+.faq-question {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--espresso);
+  padding: 1.1rem 1.5rem 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-question::-webkit-details-marker { display: none; }
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+details[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  font-size: 0.95rem;
+  color: var(--brown);
+  line-height: 1.7;
+  padding: 0 1.5rem 1.25rem 0;
+  max-width: 640px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero::before, .hero::after { display: none; }
+  .next-meeting { padding: 1.75rem 1.5rem; }
+  .about-photo--float {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.5rem;
+  }
+}

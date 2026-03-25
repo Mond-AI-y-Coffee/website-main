@@ -1,0 +1,150 @@
+/* ── Notes & Speakers ────────────────────────────────────────── */
+@import "./tokens.css";
+
+/* ── Notes List (/notes/) ───────────────────────────────────── */
+.notes-list {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.notes-list-item {
+  display: grid;
+  grid-template-columns: 7rem 1fr auto;
+  align-items: baseline;
+  gap: 0.75rem 1.25rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+.notes-list-item:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+.notes-list-date {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.notes-list-title {
+  color: var(--espresso);
+  text-decoration: none;
+  font-family: 'Lora', Georgia, serif;
+}
+
+.notes-list-title:hover {
+  color: var(--amber);
+}
+
+.notes-list-speaker {
+  color: var(--amber);
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.notes-list-speaker:hover {
+  text-decoration: underline;
+}
+
+.notes-empty {
+  color: var(--muted);
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* ── Notes Single ────────────────────────────────────────────── */
+.notes-post {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.notes-header {
+  margin-bottom: 2rem;
+}
+
+.notes-speaker {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 0.4rem;
+}
+
+.notes-speaker a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.notes-speaker a:hover {
+  text-decoration: underline;
+}
+
+.notes-date {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.notes-content p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  max-width: 640px;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Speakers Index (/speakers/) ────────────────────────────── */
+.speakers-index {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.speaker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.speaker-card:hover {
+  border-color: var(--amber);
+  background: rgba(200,117,10,0.04);
+}
+
+.speaker-name {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.95rem;
+  color: var(--espresso);
+}
+
+.speaker-count {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ── Speaker Term (/speakers/{name}/) ───────────────────────── */
+.speaker-term {
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .notes-list-item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .notes-list-speaker {
+    white-space: normal;
+  }
+}

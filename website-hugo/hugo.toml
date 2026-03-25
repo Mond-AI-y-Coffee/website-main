@@ -1,0 +1,10 @@
+baseURL       = "https://mondaiycoffee.com/"
+languageCode  = "en-us"
+title         = "Mond(AI)y Coffee"
+buildFuture   = true   # allows upcoming speaker posts to appear before their date
+
+# Custom taxonomy. Note: defining [taxonomies] overrides Hugo's defaults
+# (tags, categories). We're deliberately not using tags/categories here.
+# If tags are needed later, add: tag = "tags"
+[taxonomies]
+  speaker = "speakers"

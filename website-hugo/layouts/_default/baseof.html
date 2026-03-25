@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="page">
+
+    {{ partial "nav.html" . }}
+
+    {{ block "hero" . }}{{ partial "hero.html" . }}{{ end }}
+
+    <hr class="rule" />
+
+    {{ block "main" . }}{{ end }}
+
+    {{ partial "footer.html" . }}
+
+  </div>
+
+  {{ block "scripts" . }}{{ end }}
+
+  {{ block "schema" . }}{{ end }}
+</body>
+</html>
