@@ -4,9 +4,17 @@
 /* ── Nav ────────────────────────────────────────────────────── */
 .site-nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 .site-nav a {
@@ -22,6 +30,48 @@
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--amber);
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--muted);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s;
+}
+
+.nav-toggle:hover .nav-toggle__bar,
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar {
+  background: var(--amber);
+}
+
+/* Bars animate to X when open (7px = gap 5px + bar height 2px) */
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ── Hero ───────────────────────────────────────────────────── */
@@ -389,12 +439,84 @@ details[open] .faq-question::after {
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */
+
+/* — 600px: hamburger trigger + layout fixes — */
 @media (max-width: 600px) {
-  .hero::before, .hero::after { display: none; }
-  .next-meeting { padding: 1.75rem 1.5rem; }
+
+  /* Nav: show hamburger, hide links until toggled */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    padding-bottom: 0;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    padding: 0.75rem 0 1rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.55rem 0;
+    width: 100%;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(201, 184, 154, 0.3);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* Hero decorative pseudo-elements */
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
+
+  /* Next Meeting card */
+  .next-meeting {
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  /* About float image */
   .about-photo--float {
     float: none;
     width: 100%;
     margin: 0 0 1.5rem;
+  }
+
+  /* Dividers + footer spacing */
+  .rule { margin: 1.75rem 0; }
+  footer { margin-top: 3rem; }
+}
+
+/* — 480px: padding & hero reduction — */
+@media (max-width: 480px) {
+
+  .hero {
+    padding-top: 2.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  /* Force single-column grids */
+  .basics {
+    grid-template-columns: 1fr;
+  }
+
+  #members-grid {
+    grid-template-columns: 1fr;
   }
 }
