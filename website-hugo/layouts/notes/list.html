@@ -1,7 +1,22 @@
 {{ define "main" }}
 
-  <section class="notes-list" aria-label="Session notes archive">
-    {{ range .Pages.ByDate.Reverse }}
+{{ $todayStr := now.Format "2006-01-02" }}
+{{ $upcoming := slice }}
+{{ $past := slice }}
+{{ range .Pages }}
+  {{ if ge (.Date.Format "2006-01-02") $todayStr }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ else }}
+    {{ $past = $past | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if or $upcoming $past }}
+
+  {{ if $upcoming }}
+  <section class="notes-list" aria-label="Upcoming meetings">
+    <h3 class="notes-list-heading">Upcoming Meetings</h3>
+    {{ range sort $upcoming "Date" "asc" }}
     {{ $note := . }}
     <div class="notes-list-item">
       <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
@@ -10,9 +25,28 @@
         <a class="notes-list-read" href="{{ .RelPermalink }}">Read Note</a>
       </span>
     </div>
-    {{ else }}
-    <p class="notes-empty">No session notes yet. Check back after the next meeting.</p>
     {{ end }}
   </section>
+  {{ end }}
+
+  {{ if $past }}
+  <section class="notes-list notes-list--previous" aria-label="Previous meetings">
+    <h3 class="notes-list-heading">Previous Meetings</h3>
+    {{ range sort $past "Date" "desc" }}
+    {{ $note := . }}
+    <div class="notes-list-item">
+      <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
+      <span class="notes-list-presenter-row">
+        <span class="notes-list-presenter">{{ range .Params.speakers }}{{ if $note.Params.speaker_url }}<a href="{{ $note.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}{{ with $note.Params.company }} of {{ if $note.Params.company_url }}<a href="{{ $note.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}</span>
+        <a class="notes-list-read" href="{{ .RelPermalink }}">Read Note</a>
+      </span>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+
+{{ else }}
+  <p class="notes-empty">No session notes yet. Check back after the next meeting.</p>
+{{ end }}
 
 {{ end }}

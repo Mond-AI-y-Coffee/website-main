@@ -6,6 +6,18 @@
   animation: fadeUp 0.7s 0.25s ease both;
 }
 
+.notes-list--previous {
+  margin-top: 3rem;
+}
+
+.notes-list-heading {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+
 .notes-list-item {
   display: grid;
   grid-template-columns: 7rem 1fr;
