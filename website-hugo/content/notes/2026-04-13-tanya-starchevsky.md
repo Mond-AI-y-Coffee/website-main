@@ -1,6 +1,6 @@
 ---
 title: "Tanya Starchevsky — Bloomtown Plant Exchange"
-date: 2026-03-30
+date: 2026-04-13
 draft: false
 speakers: ["Tanya Starchevsky"]
 speaker_url: "https://www.linkedin.com/in/tstarchevsky/"
