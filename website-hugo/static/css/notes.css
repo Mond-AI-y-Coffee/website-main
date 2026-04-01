@@ -8,7 +8,7 @@
 
 .notes-list-item {
   display: grid;
-  grid-template-columns: 7rem 1fr auto auto;
+  grid-template-columns: 7rem 1fr;
   align-items: baseline;
   gap: 0.75rem 1.25rem;
   padding: 0.9rem 0;
@@ -24,38 +24,24 @@
   color: var(--muted);
   font-size: 0.8rem;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.notes-list-title {
+.notes-list-date:hover {
+  color: var(--amber);
+}
+
+.notes-list-presenter {
   color: var(--espresso);
-  text-decoration: none;
-  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
 }
 
-.notes-list-title:hover {
-  color: var(--amber);
-}
-
-.notes-list-speaker {
+.notes-list-presenter a {
   color: var(--amber);
   text-decoration: none;
-  font-size: 0.85rem;
-  white-space: nowrap;
 }
 
-.notes-list-speaker:hover {
-  text-decoration: underline;
-}
-
-.notes-list-company {
-  color: var(--muted);
-  font-size: 0.85rem;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-a.notes-list-company:hover {
-  color: var(--amber);
+.notes-list-presenter a:hover {
   text-decoration: underline;
 }
 
@@ -154,11 +140,6 @@ a.notes-list-company:hover {
   .notes-list-item {
     grid-template-columns: 1fr;
     gap: 0.2rem;
-  }
-
-  .notes-list-speaker,
-  .notes-list-company {
-    white-space: normal;
   }
 
   .speakers-grid {
