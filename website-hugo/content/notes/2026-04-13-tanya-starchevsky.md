@@ -1,5 +1,5 @@
 ---
-title: "Tanya Starchevsky — Bloomtown Plant Exchange"
+title: "Tanya Starchevsky"
 date: 2026-04-13
 draft: false
 speakers: ["Tanya Starchevsky"]

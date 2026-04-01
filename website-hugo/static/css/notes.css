@@ -8,7 +8,7 @@
 
 .notes-list-item {
   display: grid;
-  grid-template-columns: 7rem 1fr auto;
+  grid-template-columns: 7rem 1fr auto auto;
   align-items: baseline;
   gap: 0.75rem 1.25rem;
   padding: 0.9rem 0;
@@ -44,6 +44,18 @@
 }
 
 .notes-list-speaker:hover {
+  text-decoration: underline;
+}
+
+.notes-list-company {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.notes-list-company:hover {
+  color: var(--amber);
   text-decoration: underline;
 }
 
@@ -144,7 +156,8 @@
     gap: 0.2rem;
   }
 
-  .notes-list-speaker {
+  .notes-list-speaker,
+  .notes-list-company {
     white-space: normal;
   }
 

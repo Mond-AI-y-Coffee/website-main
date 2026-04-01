@@ -5,5 +5,5 @@ draft: false
 speakers: ["Vivek Singhania"]
 speaker_url: "https://www.linkedin.com/in/viveksinghania/"
 company: "StyleBoard"
-company_url: "https://styboard.ai"
+company_url: "https://styleboard.ai"
 ---

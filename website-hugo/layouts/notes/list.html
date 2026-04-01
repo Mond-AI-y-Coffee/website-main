@@ -8,6 +8,9 @@
       {{ range .Params.speakers }}
       <a class="notes-list-speaker" href="{{ "/speakers/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
       {{ end }}
+      {{ with .Params.company }}
+      {{ if $.Params.company_url }}<a class="notes-list-company" href="{{ $.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}<span class="notes-list-company">{{ . }}</span>{{ end }}
+      {{ end }}
     </div>
     {{ else }}
     <p class="notes-empty">No session notes yet. Check back after the next meeting.</p>
