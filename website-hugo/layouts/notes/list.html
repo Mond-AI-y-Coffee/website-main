@@ -5,8 +5,9 @@
     {{ $note := . }}
     <div class="notes-list-item">
       <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
-      <span class="notes-list-presenter">
-        {{ range .Params.speakers }}{{ if $note.Params.speaker_url }}<a href="{{ $note.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}{{ with $note.Params.company }} of {{ if $note.Params.company_url }}<a href="{{ $note.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}
+      <span class="notes-list-presenter-row">
+        <span class="notes-list-presenter">{{ range .Params.speakers }}{{ if $note.Params.speaker_url }}<a href="{{ $note.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}{{ with $note.Params.company }} of {{ if $note.Params.company_url }}<a href="{{ $note.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}</span>
+        <a class="notes-list-read" href="{{ .RelPermalink }}">Read Note</a>
       </span>
     </div>
     {{ else }}

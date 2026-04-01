@@ -31,6 +31,13 @@
   color: var(--amber);
 }
 
+.notes-list-presenter-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
 .notes-list-presenter {
   color: var(--espresso);
   font-size: 0.95rem;
@@ -43,6 +50,22 @@
 
 .notes-list-presenter a:hover {
   text-decoration: underline;
+}
+
+.notes-list-read {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: right;
+  transition: color 0.2s;
+}
+
+.notes-list-read:hover {
+  color: var(--amber);
 }
 
 .notes-empty {
