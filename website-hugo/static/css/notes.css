@@ -147,4 +147,8 @@
   .notes-list-speaker {
     white-space: normal;
   }
+
+  .speakers-grid {
+    grid-template-columns: 1fr;
+  }
 }

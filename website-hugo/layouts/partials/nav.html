@@ -1,8 +1,15 @@
 <nav class="site-nav" aria-label="Site navigation">
-  <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
-  <a href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
-  <a href="/get-involved/" {{ if eq .RelPermalink "/get-involved/" }}aria-current="page"{{ end }}>Get Involved</a>
-  <a href="/notes/" {{ if or (eq .Section "notes") (hasPrefix .RelPermalink "/notes/") }}aria-current="page"{{ end }}>Notes</a>
-  <a href="/speakers/" {{ if hasPrefix .RelPermalink "/speakers/" }}aria-current="page"{{ end }}>Speakers</a>
-  <a href="/faq/" {{ if eq .RelPermalink "/faq/" }}aria-current="page"{{ end }}>FAQ</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+    <a href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
+    <a href="/get-involved/" {{ if eq .RelPermalink "/get-involved/" }}aria-current="page"{{ end }}>Get Involved</a>
+    <a href="/notes/" {{ if or (eq .Section "notes") (hasPrefix .RelPermalink "/notes/") }}aria-current="page"{{ end }}>Notes</a>
+    <a href="/speakers/" {{ if hasPrefix .RelPermalink "/speakers/" }}aria-current="page"{{ end }}>Speakers</a>
+    <a href="/faq/" {{ if eq .RelPermalink "/faq/" }}aria-current="page"{{ end }}>FAQ</a>
+  </div>
 </nav>
