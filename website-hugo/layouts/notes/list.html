@@ -2,10 +2,11 @@
 
   <section class="notes-list" aria-label="Session notes archive">
     {{ range .Pages.ByDate.Reverse }}
+    {{ $note := . }}
     <div class="notes-list-item">
       <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
       <span class="notes-list-presenter">
-        {{ range .Params.speakers }}{{ if $.Params.speaker_url }}<a href="{{ $.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}{{ with .Params.company }} of {{ if $.Params.company_url }}<a href="{{ $.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}
+        {{ range .Params.speakers }}{{ if $note.Params.speaker_url }}<a href="{{ $note.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}{{ with $note.Params.company }} of {{ if $note.Params.company_url }}<a href="{{ $note.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}
       </span>
     </div>
     {{ else }}
