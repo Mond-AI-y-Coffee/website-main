@@ -6,5 +6,8 @@ buildFuture   = true   # allows upcoming speaker posts to appear before their da
 # Custom taxonomy. Note: defining [taxonomies] overrides Hugo's defaults
 # (tags, categories). We're deliberately not using tags/categories here.
 # If tags are needed later, add: tag = "tags"
+[markup.goldmark.renderer]
+  unsafe = true
+
 [taxonomies]
   speaker = "speakers"

@@ -170,6 +170,20 @@
   animation: fadeUp 0.7s 0.25s ease both;
 }
 
+/* ── Comic Strip ─────────────────────────────────────────────── */
+.comic-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.comic-strip img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .notes-list-item {
