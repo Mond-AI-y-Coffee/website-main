@@ -118,6 +118,23 @@
   font-style: italic;
 }
 
+.notes-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.notes-content ul {
+  margin-bottom: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.notes-content li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  max-width: 640px;
+}
+
 .notes-content p {
   font-size: 1rem;
   line-height: 1.75;
