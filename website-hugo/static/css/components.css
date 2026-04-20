@@ -99,12 +99,12 @@ h1 .ai-bracket {
 
 h2.tagline {
   font-family: 'Lora', Georgia, serif;
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   font-weight: 400;
   font-style: italic;
-  color: var(--muted);
-  max-width: 480px;
-  line-height: 1.5;
+  color: var(--brown);
+  max-width: 520px;
+  line-height: 1.55;
 }
 
 .hero-contact {
