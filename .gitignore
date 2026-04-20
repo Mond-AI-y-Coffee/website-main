@@ -1,3 +1,4 @@
 website-hugo/public/
 website-hugo/resources/
 .hugo_build.lock
+.gstack/

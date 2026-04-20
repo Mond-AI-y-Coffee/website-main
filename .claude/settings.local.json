@@ -26,7 +26,17 @@
       "Bash(curl -si https://api.github.com/repos/Mond-AI-y-Coffee/website-main)",
       "Bash(curl -s https://api.github.com/repos/Mond-AI-y-Coffee/website-main/contents/)",
       "Bash(curl -s \"https://api.github.com/repos/Mond-AI-y-Coffee/website-main/git/trees/HEAD?recursive=1\")",
-      "Bash(find \"/c/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/content/notes\" -name \"*.md\")"
+      "Bash(find \"/c/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/content/notes\" -name \"*.md\")",
+      "Bash(cp \"C:/Users/Delhome/my-comic/panel_1.png\" \"C:/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/static/images/2026-03-30-comic-panel-1.png\")",
+      "Bash(cp \"C:/Users/Delhome/my-comic/panel_2.png\" \"C:/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/static/images/2026-03-30-comic-panel-2.png\")",
+      "Bash(cp \"C:/Users/Delhome/my-comic/panel_3.png\" \"C:/Users/Delhome/Documents/GitHub/Mond\\(ai\\)y Coffee/website-hugo/static/images/2026-03-30-comic-panel-3.png\")",
+      "Skill(browse)",
+      "Skill(browse:*)",
+      "Bash(gh run *)",
+      "Skill(design-review)",
+      "Skill(design-review:*)",
+      "Skill(gstack-upgrade)",
+      "Skill(gstack-upgrade:*)"
     ]
   }
 }
