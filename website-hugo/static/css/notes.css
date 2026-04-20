@@ -118,6 +118,17 @@
   font-style: italic;
 }
 
+.notes-content h1 {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
 .notes-content h2 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
