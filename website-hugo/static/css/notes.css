@@ -74,6 +74,8 @@
   white-space: nowrap;
   text-align: right;
   transition: color 0.2s;
+  padding: 0.5rem 0;
+  display: inline-block;
 }
 
 .notes-list-read:hover {

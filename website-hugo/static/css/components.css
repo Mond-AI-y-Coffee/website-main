@@ -108,9 +108,12 @@ h2.tagline {
 }
 
 .hero-contact {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
   color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  max-width: 480px;
 }
 
 .hero-contact a {
