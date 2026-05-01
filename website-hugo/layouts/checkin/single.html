@@ -1,0 +1,38 @@
+{{ define "hero" }}{{ end }}
+
+{{ define "main" }}
+<div class="checkin">
+  <div class="checkin__header">
+    <h1 class="checkin__title">Check In</h1>
+    <div class="checkin__date-row">
+      <label for="session-date" class="checkin__date-label">Session date</label>
+      <input type="date" id="session-date" class="checkin__date-input" />
+    </div>
+  </div>
+
+  <div class="checkin__scanner">
+    <div class="checkin__viewport" id="viewport">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="canvas" hidden></canvas>
+      <div class="checkin__flash" id="flash"></div>
+    </div>
+    <div class="checkin__controls">
+      <button id="btn-start" class="checkin__btn checkin__btn--primary">Start Camera</button>
+      <button id="btn-stop" class="checkin__btn checkin__btn--ghost" hidden>Stop</button>
+    </div>
+    <div class="checkin__toast" id="toast" aria-live="polite"></div>
+  </div>
+
+  <div class="checkin__session" id="session-section" hidden>
+    <h2 class="checkin__session-heading">Checked In <span id="count" class="checkin__count">0</span></h2>
+    <ul class="checkin__list" id="checkin-list"></ul>
+    <button id="btn-export" class="checkin__btn checkin__btn--amber">Copy Attendance List</button>
+    <p class="checkin__export-note" id="export-note" hidden>Copied to clipboard!</p>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+<script src="/js/checkin.js"></script>
+{{ end }}

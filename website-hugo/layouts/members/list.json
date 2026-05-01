@@ -1,0 +1,1 @@
+[{{ range $i, $p := .Pages }}{{ if $i }},{{ end }}{"slug":{{ $p.File.ContentBaseName | jsonify }},"name":{{ $p.Title | jsonify }},"role":{{ $p.Params.role | jsonify }}}{{ end }}]

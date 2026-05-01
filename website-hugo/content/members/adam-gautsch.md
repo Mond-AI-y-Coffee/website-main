@@ -3,7 +3,7 @@ title: "Adam Gautsch"
 date: 2025-10-01
 draft: false
 role: "Builder & Community Organizer"
-company: ""
+company: "ATDC at Georgia Tech"
 location: "Atlanta, GA"
 email: "gautsch@hey.com"
 linkedin: "https://www.linkedin.com/in/adamgautsch/"
