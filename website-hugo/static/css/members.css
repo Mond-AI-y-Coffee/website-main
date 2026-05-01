@@ -1,0 +1,191 @@
+/* ── Member Passport ────────────────────────────────────────── */
+
+.member-passport {
+  background: var(--cream);
+  border: 1.5px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.75rem;
+  max-width: 380px;
+  margin: 2.5rem auto 0;
+  box-shadow: 0 6px 24px rgba(30, 18, 8, 0.10);
+}
+
+.member-passport__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.member-passport__brand {
+  font-family: 'Cooper Black', serif;
+  font-size: 0.7rem;
+  color: var(--amber);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.member-passport__badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+}
+
+.member-passport__identity {
+  margin-bottom: 1.5rem;
+}
+
+.member-passport__name {
+  font-family: 'Cooper Black', serif;
+  font-size: 1.9rem;
+  color: var(--brown);
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+}
+
+.member-passport__role {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.member-passport__location {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.member-passport__qr-section {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.25rem;
+}
+
+.member-passport__qr-section img,
+.member-passport__qr-section canvas {
+  display: block;
+  border-radius: 6px;
+}
+
+.member-passport__qr-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.member-passport__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.member-passport__link {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.member-passport__link:hover {
+  color: var(--brown);
+}
+
+/* ── Member Profile (below the card) ───────────────────────── */
+
+.member-profile {
+  max-width: 620px;
+  margin: 3rem auto 0;
+}
+
+.member-profile__content h2 {
+  font-family: 'Cooper Black', serif;
+  font-size: 1rem;
+  color: var(--brown);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 2rem 0 0.5rem;
+}
+
+.member-profile__content h2:first-child {
+  margin-top: 0;
+}
+
+.member-profile__content p {
+  color: var(--espresso);
+  margin-bottom: 0.75rem;
+}
+
+.member-profile__content ul {
+  padding-left: 1.25rem;
+  color: var(--espresso);
+}
+
+.member-profile__content li {
+  margin-bottom: 0.2rem;
+}
+
+/* ── Members Directory ──────────────────────────────────────── */
+
+.members-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.members-card {
+  display: block;
+  background: var(--cream);
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.members-card:hover {
+  border-color: var(--amber);
+  box-shadow: 0 4px 16px rgba(30, 18, 8, 0.08);
+}
+
+.members-card__name {
+  font-family: 'Cooper Black', serif;
+  font-size: 1.15rem;
+  color: var(--brown);
+  margin-bottom: 0.25rem;
+}
+
+.members-card__role {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.members-card__location {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.members-card__cta {
+  font-size: 0.75rem;
+  color: var(--amber);
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="members-list">
+    {{ range .Pages }}
+    {{ if not .Draft }}
+    <a href="{{ .RelPermalink }}" class="members-card">
+      <div class="members-card__name">{{ .Title }}</div>
+      {{ with .Params.role }}<div class="members-card__role">{{ . }}{{ with $.Params.company }} · {{ . }}{{ end }}</div>{{ end }}
+      {{ with .Params.location }}<div class="members-card__location">{{ . }}</div>{{ end }}
+      <span class="members-card__cta">View passport →</span>
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
