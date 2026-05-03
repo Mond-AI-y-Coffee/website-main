@@ -6,6 +6,7 @@
   let checkedIn = [];   // [{ slug, name }] in order of scan
   let scanning = false;
   let stream = null;
+  let facingMode = 'environment';
   let rafId = null;
 
   const video = document.getElementById('video');
@@ -15,6 +16,7 @@
   const toast = document.getElementById('toast');
   const btnStart = document.getElementById('btn-start');
   const btnStop = document.getElementById('btn-stop');
+  const btnFlip = document.getElementById('btn-flip');
   const btnExport = document.getElementById('btn-export');
   const exportNote = document.getElementById('export-note');
   const sessionSection = document.getElementById('session-section');
@@ -35,11 +37,12 @@
 
   btnStart.addEventListener('click', startCamera);
   btnStop.addEventListener('click', stopCamera);
+  btnFlip.addEventListener('click', flipCamera);
   btnExport.addEventListener('click', exportList);
 
   function startCamera() {
     if (scanning) return;
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode } })
       .then(s => {
         stream = s;
         video.srcObject = s;
@@ -47,6 +50,7 @@
         scanning = true;
         btnStart.hidden = true;
         btnStop.hidden = false;
+        btnFlip.hidden = false;
         requestAnimationFrame(scanFrame);
       })
       .catch(err => {
@@ -61,6 +65,13 @@
     video.srcObject = null;
     btnStop.hidden = true;
     btnStart.hidden = false;
+    btnFlip.hidden = true;
+  }
+
+  function flipCamera() {
+    facingMode = facingMode === 'environment' ? 'user' : 'environment';
+    stopCamera();
+    startCamera();
   }
 
   function scanFrame() {
