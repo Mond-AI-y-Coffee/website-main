@@ -8,7 +8,7 @@ location: "Atlanta, GA"
 email: "onyekwelu@obukwelu.com"
 linkedin: "https://www.linkedin.com/in/sobu"
 github: "https://github.com/joemocha"
-website: "sobu.dev"
+website: "https://sobu.dev"
 meetings_attended: []
 presented_at: []
 ---
