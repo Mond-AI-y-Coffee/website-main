@@ -2,7 +2,7 @@
 title: "Holograph Company"
 members: ["ankush-tewari", "kissy-dabbs"]
 project_type: "speaker"
-presentation_date: ""
+presentation_date: "2026-05-12"
 draft: true
 ---
 

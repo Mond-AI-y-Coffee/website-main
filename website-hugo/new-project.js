@@ -161,7 +161,7 @@ const projectTitle = overrides[0] ? '' : derivedTitle;
 const frontMatter = `---
 title: "${projectTitle}"
 members: ${membersYaml}
-type: "speaker"
+project_type: "speaker"
 presentation_date: ""${previousLine}
 draft: true
 ---`;
