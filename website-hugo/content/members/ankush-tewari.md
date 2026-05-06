@@ -6,7 +6,7 @@ location: "Atlanta, GA"
 email: "ankush@holographcompany.com"
 linkedin: "https://www.linkedin.com/in/ankushtewari/"
 github: ""
-website: "www.holographcompany.com"
+website: "https://www.holographcompany.com"
 ---
 
 ## What are you working on?

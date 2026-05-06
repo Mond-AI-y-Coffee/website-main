@@ -6,7 +6,7 @@ location: "Atlanta, GA"
 email: "prefer not to list"
 linkedin: "https://www.linkedin.com/in/karen-kissy-dabbs-b8392045/"
 github: ""
-website: "www.holographcompany.com"
+website: "https://www.holographcompany.com"
 ---
 
 ## What are you working on?
