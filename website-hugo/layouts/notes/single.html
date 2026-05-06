@@ -4,24 +4,35 @@
 
     <header class="notes-header">
       {{ range .Params.speakers }}
-      <div class="notes-speaker">
-        {{ if $.Params.speaker_url }}
-        <a href="{{ $.Params.speaker_url }}" target="_blank" rel="noopener">{{ . }}</a>
-        {{ else }}
-        {{ . }}
-        {{ end }}
-        {{ if $.Params.company }}
-        —
-        {{ if $.Params.company_url }}
-        <a href="{{ $.Params.company_url }}" target="_blank" rel="noopener">{{ $.Params.company }}</a>
-        {{ else }}
-        {{ $.Params.company }}
-        {{ end }}
-        {{ end }}
-      </div>
+      <div class="notes-speaker">{{ . }}</div>
       {{ end }}
       <div class="notes-date">{{ .Date.Format "Monday, January 2, 2006" }}</div>
     </header>
+
+    {{ with .Params.members }}
+    <div class="notes-member-contexts">
+      {{ range . }}
+        {{ $m := site.GetPage (printf "/members/%s" .) }}
+        {{ with $m }}
+        <div class="notes-member-context">
+          <div class="notes-member-context__header">
+            <span class="notes-member-context__label">Member</span>
+            <a href="{{ .RelPermalink }}" class="notes-member-context__link">View passport →</a>
+          </div>
+          <p class="notes-member-context__name">{{ .Title }}</p>
+          {{ with .Params.role }}
+          <p class="notes-member-context__role">{{ . }}{{ with $m.Params.company }} · {{ . }}{{ end }}</p>
+          {{ end }}
+          <div class="notes-member-context__stats">
+            {{ with .Params.meetings_attended }}<span>{{ len . }} meeting{{ if gt (len .) 1 }}s{{ end }} attended</span>{{ end }}
+            {{ with .Params.presented_at }}<span>{{ len . }} presentation{{ if gt (len .) 1 }}s{{ end }}</span>{{ end }}
+            <span>Since {{ .Date.Format "January 2006" }}</span>
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
 
     <div class="notes-content about-body">
       {{ .Content }}

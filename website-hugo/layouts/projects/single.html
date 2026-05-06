@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+{{ $members := slice }}
+{{ range .Params.members }}
+  {{ $m := site.GetPage (printf "/members/%s" .) }}
+  {{ if $m }}{{ $members = $members | append $m }}{{ end }}
+{{ end }}
+
+<div class="project-layout">
+
+  <article class="notes-post">
+
+    <header class="notes-header">
+      {{ with .Title }}<h1 class="notes-speaker">{{ . }}</h1>{{ end }}
+
+      {{ with .Params.presentation_date }}
+      {{ $meetingPage := site.GetPage (printf "/notes/%s" .) }}
+      <div class="notes-date">
+        {{ if $meetingPage }}
+          Presented <a href="{{ $meetingPage.RelPermalink }}">{{ $meetingPage.Date.Format "January 2, 2006" }}</a>
+        {{ else }}
+          Presenting {{ . }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ with .Params.previous }}
+        {{ $prev := site.GetPage (printf "/projects/%s" .) }}
+        {{ if $prev }}<p class="project-card__previous">Earlier version: <a href="{{ $prev.RelPermalink }}">{{ $prev.Title }}</a></p>{{ end }}
+      {{ end }}
+    </header>
+
+    {{ if .Content }}
+    <div class="notes-content about-body">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+  </article>
+
+  {{ if $members }}
+  <aside class="project-sidebar">
+    {{ range $members }}
+    {{ $attended := len .Params.meetings_attended }}
+    <div class="project-member-card">
+      <a href="{{ .RelPermalink }}" class="project-member-card__name">{{ .Title }}</a>
+      {{ with .Params.role }}<p class="project-member-card__role">{{ . }}{{ with $.Params.company }} · {{ . }}{{ end }}</p>{{ end }}
+      {{ with .Params.location }}<p class="project-member-card__location">{{ . }}</p>{{ end }}
+      {{ if or .Params.linkedin .Params.github .Params.website }}
+      <div class="project-member-card__links">
+        {{ with .Params.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+        {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+        {{ with .Params.website }}<a href="{{ . }}" target="_blank" rel="noopener">Website</a>{{ end }}
+      </div>
+      {{ end }}
+      {{ if gt $attended 0 }}
+      <p class="project-member-card__stat">{{ $attended }} meeting{{ if gt $attended 1 }}s{{ end }} attended</p>
+      {{ end }}
+    </div>
+    {{ end }}
+  </aside>
+  {{ end }}
+
+</div>
+
+{{ end }}

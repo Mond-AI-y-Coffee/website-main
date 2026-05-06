@@ -214,6 +214,183 @@
   display: block;
 }
 
+/* ── Project Page Layout ─────────────────────────────────────── */
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.project-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.project-member-card {
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.project-member-card + .project-member-card {
+  margin-top: 1rem;
+}
+
+.project-member-card__name {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 1rem;
+  color: var(--brown);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.project-member-card__name:hover {
+  color: var(--amber);
+}
+
+.project-member-card__role {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.project-member-card__location {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-member-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.project-member-card__links a {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.project-member-card__links a:hover {
+  color: var(--brown);
+}
+
+.project-member-card__stat {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 700px) {
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-sidebar {
+    position: static;
+  }
+}
+
+/* ── Project Cards (notes/single.html) ──────────────────────── */
+.project-card {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 0;
+}
+
+.project-card + .project-card {
+  border-top: 2px solid var(--espresso);
+}
+
+.project-card__header {
+  margin-bottom: 1.5rem;
+}
+
+.project-card__members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-card__member-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.project-card__member-name {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.project-card__member-name:hover {
+  text-decoration: underline;
+}
+
+.project-card__member-role {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.project-card__title {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin: 0.5rem 0 0;
+  line-height: 1.3;
+}
+
+.project-card__label {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin: 0;
+}
+
+.project-card__label--holiday {
+  color: var(--muted);
+}
+
+.project-card__previous {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.project-card__previous a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.project-card__previous a:hover {
+  text-decoration: underline;
+}
+
+.project-card__content {
+  margin-top: 1rem;
+}
+
+.notes-content {
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .notes-list-item {
