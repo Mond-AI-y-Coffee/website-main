@@ -6,4 +6,5 @@ speakers: ["Demitrus Jones"]
 speaker_url: "https://www.linkedin.com/in/demitrusjones/"
 company: ""
 company_url: ""
+members: ["demitrus-jones"]
 ---

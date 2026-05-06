@@ -6,4 +6,5 @@ speakers: ["William King"]
 speaker_url: "https://www.linkedin.com/in/william-h-king/"
 company: "Offbrand.ai"
 company_url: "https://www.offbrand.ai/"
+members: ["william-king"]
 ---

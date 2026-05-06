@@ -6,4 +6,5 @@ speakers: ["Kolin Simon"]
 speaker_url: "https://www.linkedin.com/in/kolin-simon/"
 company: "Pursue Networking"
 company_url: "https://pursuenetworking.com/"
+members: ["kolin-simon"]
 ---

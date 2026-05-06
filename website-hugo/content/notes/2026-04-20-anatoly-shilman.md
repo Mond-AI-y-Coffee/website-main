@@ -6,10 +6,11 @@ speakers: ["Anatoly Shilman"]
 speaker_url: "https://www.linkedin.com/in/anatolyshilman/"
 company: "CogBias AI"
 company_url: "https://www.cogbias.ai/"
+members: ["anatoly-shilman"]
 ---
 
 # Pre-Read
-[Toly Shilman](/speakers/anatoly-shilman/), CEO and Co-Founder of [Cogbias AI ](https://www.cogbias.ai/) is presenting. CogBias is building the decision integrity layer for enterprises and academia.    
+[Toly Shilman](/members/anatoly-shilman/), CEO and Co-Founder of [Cogbias AI ](https://www.cogbias.ai/) is presenting. CogBias is building the decision integrity layer for enterprises and academia.    
 
 ## About Cogbias AI:  
 [Cogbias](https://cogbias.ai/) AI helps revenue teams make better decisions by eliminating the cognitive biases that distort how they process information. We analyze AI outputs, research, sales conversations, and messaging to detect and correct biases — like confirmation bias and anchoring effects — before they influence how deals are won or lost. The result is cleaner, more reliable decision-making without replacing the tools teams already use.  

@@ -6,6 +6,7 @@ speakers: ["Tanya Starchevsky"]
 speaker_url: "https://www.linkedin.com/in/tstarchevsky/"
 company: "Bloomtown Plant Exchange"
 company_url: ""
+members: ["tanya-starchevsky"]
 ---
 
 ## Presentation Time
@@ -15,8 +16,8 @@ company_url: ""
 
 ## Free Share
 * A new attendee shared the video editing AI he's working on, and we went on deep dive to the business and product of it all.
-* [Kolin](/speakers/kolin-simon/) ended the meeting leading a conversation on memory in the world of AI.
+* [Kolin](/members/kolin-simon/) ended the meeting leading a conversation on memory in the world of AI.
 
 
 ## Next Week
-[Toly Shilman](/speakers/anatoly-shilman/) will share more about [CogBias AI](https://www.cogbias.ai/)
+[Toly Shilman](/members/anatoly-shilman/) will share more about [CogBias AI](https://www.cogbias.ai/)

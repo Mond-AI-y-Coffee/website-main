@@ -6,6 +6,7 @@ speakers: ["Pass the Aux Session"]
 speaker_url: ""
 company: ""
 company_url: ""
+members: []
 ---
 
 Sometimes we just pass the HDMI chord around folks share what they are working on at the momument. 
