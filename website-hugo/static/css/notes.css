@@ -120,6 +120,68 @@
   font-style: italic;
 }
 
+.notes-date a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.notes-date a:hover {
+  text-decoration: underline;
+}
+
+.notes-project {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.notes-project:last-of-type {
+  border-bottom: none;
+}
+
+.notes-project__header {
+  margin-bottom: 1.5rem;
+}
+
+.notes-project__time {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.notes-project__title {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400;
+  margin: 0 0 0.25rem;
+}
+
+.notes-project__title a {
+  color: var(--espresso);
+  text-decoration: none;
+}
+
+.notes-project__title a:hover {
+  color: var(--amber);
+}
+
+.notes-project__presenters {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.notes-project__presenters a {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.notes-project__presenters a:hover {
+  text-decoration: underline;
+}
+
 .notes-content h1 {
   font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
   font-size: clamp(1.2rem, 3vw, 1.6rem);

@@ -41,7 +41,7 @@
   {{ if $members }}
   <aside class="project-sidebar">
     {{ range $members }}
-    {{ $attended := len .Params.meetings_attended }}
+    {{ $attended := 0 }}{{ with .Params.meetings_attended }}{{ $attended = len . }}{{ end }}
     <div class="project-member-card">
       <a href="{{ .RelPermalink }}" class="project-member-card__name">{{ .Title }}</a>
       {{ with .Params.role }}<p class="project-member-card__role">{{ . }}{{ with $.Params.company }} · {{ . }}{{ end }}</p>{{ end }}

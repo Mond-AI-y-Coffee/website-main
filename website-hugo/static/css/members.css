@@ -1,12 +1,38 @@
 /* ── Member Passport ────────────────────────────────────────── */
 
+/* ── Member Layout (two-column) ─────────────────────────────── */
+
+.member-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-areas: "main sidebar";
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.member-layout__main {
+  grid-area: main;
+}
+
+.member-layout__sidebar {
+  grid-area: sidebar;
+}
+
+@media (max-width: 700px) {
+  .member-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "sidebar" "main";
+  }
+}
+
+/* ── Member Passport ────────────────────────────────────────── */
+
 .member-passport {
   background: var(--cream);
   border: 1.5px solid var(--rule);
   border-radius: 14px;
   padding: 1.75rem;
-  max-width: 380px;
-  margin: 2.5rem auto 0;
   box-shadow: 0 6px 24px rgba(30, 18, 8, 0.10);
 }
 
@@ -105,12 +131,46 @@
   color: var(--brown);
 }
 
-/* ── Member Profile (below the card) ───────────────────────── */
+/* ── Member Presentations (sidebar) ────────────────────────── */
 
-.member-profile {
-  max-width: 620px;
-  margin: 3rem auto 0;
+.member-presentations {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
 }
+
+.member-presentations__heading {
+  font-family: 'Cooper Black', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.member-presentations__item {
+  margin-bottom: 0.6rem;
+}
+
+.member-presentations__link {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.member-presentations__link:hover {
+  text-decoration: underline;
+}
+
+.member-presentations__date {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Member Profile ─────────────────────────────────────────── */
 
 .member-profile__content h2 {
   font-family: 'Cooper Black', serif;

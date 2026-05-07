@@ -1,42 +1,77 @@
 {{ define "hero" }}{{ end }}
 
 {{ define "main" }}
-  <div class="member-passport">
-    <div class="member-passport__header">
-      <span class="member-passport__brand">Mond(ai)y Coffee</span>
-      <span class="member-passport__badge">Member</span>
+  {{ $slug := .File.ContentBaseName }}
+  {{ $allProjects := where site.RegularPages "Section" "projects" }}
+  {{ $presentations := where $allProjects ".Params.members" "intersect" (slice $slug) }}
+  {{ $presentations = sort $presentations "Params.presentation_date" "asc" }}
+
+  <div class="member-layout">
+
+    <div class="member-layout__main">
+      {{ if .Content }}
+      <div class="member-profile__content about-body">
+        {{ .Content }}
+      </div>
+      {{ end }}
+
+      {{ if $presentations }}
+      <div class="member-presentations">
+        <h3 class="member-presentations__heading">Presented On</h3>
+        {{ range $presentations }}
+          {{ $note := site.GetPage (printf "/notes/%s" .Params.presentation_date) }}
+          <div class="member-presentations__item">
+            {{ if $note }}
+            <a href="{{ $note.RelPermalink }}" class="member-presentations__link">
+              {{ .Title }}
+              <span class="member-presentations__date">{{ (time .Params.presentation_date).Format "Jan 2, 2006" }}</span>
+            </a>
+            {{ else }}
+            <span class="member-presentations__link">
+              {{ .Title }}
+              <span class="member-presentations__date">{{ .Params.presentation_date }}</span>
+            </span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+      {{ end }}
     </div>
 
-    <div class="member-passport__identity">
-      <h1 class="member-passport__name">{{ .Title }}</h1>
-      {{ with .Params.role }}<p class="member-passport__role">{{ . }}{{ with $.Params.company }} · {{ . }}{{ end }}</p>{{ end }}
-      {{ with .Params.location }}<p class="member-passport__location">{{ . }}</p>{{ end }}
-    </div>
+    <aside class="member-layout__sidebar">
 
-    <div class="member-passport__qr-section">
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={{ .Permalink | urlquery }}&bgcolor=f5f0e8&color=1e1208&margin=6"
-        alt="QR code linking to {{ .Title }}'s profile"
-        width="140"
-        height="140"
-      />
-      <p class="member-passport__qr-label">Scan to connect</p>
-    </div>
+      <div class="member-passport">
+        <div class="member-passport__header">
+          <span class="member-passport__brand">Mond(ai)y Coffee</span>
+          <span class="member-passport__badge">Member</span>
+        </div>
 
-    {{ if or .Params.linkedin .Params.github .Params.website }}
-    <div class="member-passport__links">
-      {{ with .Params.linkedin }}<a href="{{ . }}" class="member-passport__link" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
-      {{ with .Params.github }}<a href="{{ . }}" class="member-passport__link" target="_blank" rel="noopener">GitHub</a>{{ end }}
-      {{ with .Params.website }}<a href="{{ . }}" class="member-passport__link" target="_blank" rel="noopener">Website</a>{{ end }}
-    </div>
-    {{ end }}
+        <div class="member-passport__identity">
+          <h1 class="member-passport__name">{{ .Title }}</h1>
+          {{ with .Params.role }}<p class="member-passport__role">{{ . }}{{ with $.Params.company }} · {{ . }}{{ end }}</p>{{ end }}
+          {{ with .Params.location }}<p class="member-passport__location">{{ . }}</p>{{ end }}
+        </div>
+
+        <div class="member-passport__qr-section">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={{ .Permalink | urlquery }}&bgcolor=f5f0e8&color=1e1208&margin=6"
+            alt="QR code linking to {{ .Title }}'s profile"
+            width="140"
+            height="140"
+          />
+          <p class="member-passport__qr-label">Scan to connect</p>
+        </div>
+
+        {{ if or .Params.linkedin .Params.github .Params.website }}
+        <div class="member-passport__links">
+          {{ with .Params.linkedin }}<a href="{{ . }}" class="member-passport__link" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+          {{ with .Params.github }}<a href="{{ . }}" class="member-passport__link" target="_blank" rel="noopener">GitHub</a>{{ end }}
+          {{ with .Params.website }}<a href="{{ . }}" class="member-passport__link" target="_blank" rel="noopener">Website</a>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+    </aside>
+
   </div>
-
-  {{ if .Content }}
-  <div class="member-profile">
-    <div class="member-profile__content about-body">
-      {{ .Content }}
-    </div>
-  </div>
-  {{ end }}
 {{ end }}

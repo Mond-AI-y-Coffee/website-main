@@ -162,7 +162,8 @@ const frontMatter = `---
 title: "${projectTitle}"
 members: ${membersYaml}
 project_type: "speaker"
-presentation_date: ""${previousLine}
+presentation_date: ""
+presentation_time: ""${previousLine}
 draft: true
 ---`;
 
