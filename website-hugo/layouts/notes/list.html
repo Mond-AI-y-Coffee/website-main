@@ -17,11 +17,19 @@
   <section class="notes-list" aria-label="Upcoming meetings">
     <h3 class="notes-list-heading">Upcoming Meetings</h3>
     {{ range sort $upcoming "Date" "asc" }}
-    {{ $note := . }}
+    {{ $dateStr := .Date.Format "2006-01-02" }}
+    {{ $projects := where (where site.RegularPages "Section" "projects") ".Params.presentation_date" $dateStr }}
+    {{ $projects = sort $projects "Params.presentation_time" "asc" }}
     <div class="notes-list-item">
       <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
       <span class="notes-list-presenter-row">
-        <span class="notes-list-presenter">{{ range $i, $name := .Params.speakers }}{{ if $i }}, {{ end }}{{ $name }}{{ end }}</span>
+        <span class="notes-list-presenter">
+          {{ if $projects }}
+            {{ range $i, $p := $projects }}{{ if $i }}, {{ end }}{{ $p.Title }}{{ end }}
+          {{ else }}
+            {{ range $i, $name := .Params.speakers }}{{ if $i }}, {{ end }}{{ $name }}{{ end }}
+          {{ end }}
+        </span>
         <a class="notes-list-read" href="{{ .RelPermalink }}">Read Note</a>
       </span>
     </div>
@@ -33,11 +41,19 @@
   <section class="notes-list notes-list--previous" aria-label="Previous meetings">
     <h3 class="notes-list-heading">Previous Meetings</h3>
     {{ range sort $past "Date" "desc" }}
-    {{ $note := . }}
+    {{ $dateStr := .Date.Format "2006-01-02" }}
+    {{ $projects := where (where site.RegularPages "Section" "projects") ".Params.presentation_date" $dateStr }}
+    {{ $projects = sort $projects "Params.presentation_time" "asc" }}
     <div class="notes-list-item">
       <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
       <span class="notes-list-presenter-row">
-        <span class="notes-list-presenter">{{ range $i, $name := .Params.speakers }}{{ if $i }}, {{ end }}{{ $name }}{{ end }}</span>
+        <span class="notes-list-presenter">
+          {{ if $projects }}
+            {{ range $i, $p := $projects }}{{ if $i }}, {{ end }}{{ $p.Title }}{{ end }}
+          {{ else }}
+            {{ range $i, $name := .Params.speakers }}{{ if $i }}, {{ end }}{{ $name }}{{ end }}
+          {{ end }}
+        </span>
         <a class="notes-list-read" href="{{ .RelPermalink }}">Read Note</a>
       </span>
     </div>
