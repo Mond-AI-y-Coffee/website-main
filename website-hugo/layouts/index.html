@@ -9,17 +9,24 @@
     {{ end }}
   {{ end }}
   {{ if $next }}
+  {{ $nextDateStr := $next.Date.Format "2006-01-02" }}
+  {{ $nextProjects := where (where site.RegularPages "Section" "projects") ".Params.presentation_date" $nextDateStr }}
+  {{ $nextProjects = sort $nextProjects "Params.presentation_time" "asc" }}
   <section class="next-meeting" aria-label="Next meeting details">
     <h3>Next Meeting</h3>
     <div class="meeting-date">{{ $next.Date.Format "Monday, January 2" }}</div>
     <p class="presenter-line">
       <strong>Presenting:</strong>
-      {{ range $next.Params.speakers }}
-      {{ if $next.Params.speaker_url }}<a href="{{ $next.Params.speaker_url }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}
-      {{ end }}
-      {{ with $next.Params.company }}
-      —
-      {{ if $next.Params.company_url }}<a href="{{ $next.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+      {{ if $nextProjects }}
+        {{ range $i, $p := $nextProjects }}{{ if $i }} &amp; {{ end }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end }}
+      {{ else }}
+        {{ range $next.Params.speakers }}
+        {{ if $next.Params.speaker_url }}<a href="{{ $next.Params.speaker_url }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+        {{ end }}
+        {{ with $next.Params.company }}
+        —
+        {{ if $next.Params.company_url }}<a href="{{ $next.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+        {{ end }}
       {{ end }}
     </p>
   </section>
