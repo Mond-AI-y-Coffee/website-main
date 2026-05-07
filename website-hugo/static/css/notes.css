@@ -1,6 +1,67 @@
 /* ── Notes & Speakers ────────────────────────────────────────── */
 @import "./tokens.css";
 
+/* ── Meeting Page Layout ────────────────────────────────────── */
+
+.meeting-layout {
+  display: block;
+}
+
+.meeting-layout--has-toc {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.meeting-toc {
+  position: sticky;
+  top: 2rem;
+}
+
+.meeting-toc__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.meeting-toc__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid var(--rule);
+}
+
+.meeting-toc__item {
+  padding: 0;
+}
+
+.meeting-toc__link {
+  display: block;
+  padding: 0.3rem 0 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  line-height: 1.3;
+}
+
+.meeting-toc__link:hover {
+  color: var(--amber);
+}
+
+@media (max-width: 780px) {
+  .meeting-layout--has-toc {
+    grid-template-columns: 1fr;
+  }
+
+  .meeting-toc {
+    display: none;
+  }
+}
+
 /* ── Notes List (/notes/) ───────────────────────────────────── */
 .notes-list {
   animation: fadeUp 0.7s 0.25s ease both;

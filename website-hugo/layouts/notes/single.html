@@ -4,70 +4,92 @@
   {{ $projects := where (where site.RegularPages "Section" "projects") ".Params.presentation_date" $dateStr }}
   {{ $projects = sort $projects "Params.presentation_time" "asc" }}
 
-  <article class="notes-post">
+  <div class="meeting-layout{{ if $projects }} meeting-layout--has-toc{{ end }}">
 
-    <header class="notes-header">
-      {{ range .Params.speakers }}
-      <div class="notes-speaker">{{ . }}</div>
+    <article class="notes-post">
+
+      <header class="notes-header">
+        {{ range .Params.speakers }}
+        <div class="notes-speaker">{{ . }}</div>
+        {{ end }}
+        <div class="notes-date">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+      </header>
+
+      {{ if $projects }}
+        {{ range $projects }}
+        <div id="{{ .File.ContentBaseName }}" class="notes-project">
+          <div class="notes-project__header">
+            {{ with .Params.presentation_time }}<span class="notes-project__time">{{ . }}</span>{{ end }}
+            <h2 class="notes-project__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ $members := slice }}
+            {{ range .Params.members }}
+              {{ $m := site.GetPage (printf "/members/%s" .) }}
+              {{ if $m }}{{ $members = $members | append $m }}{{ end }}
+            {{ end }}
+            {{ if $members }}
+            <p class="notes-project__presenters">
+              {{ range $i, $m := $members }}{{ if $i }} &amp; {{ end }}<a href="{{ $m.RelPermalink }}">{{ $m.Title }}</a>{{ end }}
+            </p>
+            {{ end }}
+          </div>
+          <div class="notes-content about-body">
+            {{ .Content }}
+          </div>
+        </div>
+        {{ end }}
+      {{ else }}
+        {{ with .Params.members }}
+        <div class="notes-member-contexts">
+          {{ range . }}
+            {{ $m := site.GetPage (printf "/members/%s" .) }}
+            {{ with $m }}
+            <div class="notes-member-context">
+              <div class="notes-member-context__header">
+                <span class="notes-member-context__label">Member</span>
+                <a href="{{ .RelPermalink }}" class="notes-member-context__link">View passport →</a>
+              </div>
+              <p class="notes-member-context__name">{{ .Title }}</p>
+              {{ with .Params.role }}
+              <p class="notes-member-context__role">{{ . }}{{ with $m.Params.company }} · {{ . }}{{ end }}</p>
+              {{ end }}
+              <div class="notes-member-context__stats">
+                {{ with .Params.meetings_attended }}<span>{{ len . }} meeting{{ if gt (len .) 1 }}s{{ end }} attended</span>{{ end }}
+                {{ with .Params.presented_at }}<span>{{ len . }} presentation{{ if gt (len .) 1 }}s{{ end }}</span>{{ end }}
+                <span>Since {{ .Date.Format "January 2006" }}</span>
+              </div>
+            </div>
+            {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
       {{ end }}
-      <div class="notes-date">{{ .Date.Format "Monday, January 2, 2006" }}</div>
-    </header>
+
+      {{ with .Content }}
+      <div id="meeting-notes" class="notes-content about-body">
+        {{ . }}
+      </div>
+      {{ end }}
+
+    </article>
 
     {{ if $projects }}
-      {{ range $projects }}
-      <div class="notes-project">
-        <div class="notes-project__header">
-          {{ with .Params.presentation_time }}<span class="notes-project__time">{{ . }}</span>{{ end }}
-          <h2 class="notes-project__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          {{ $members := slice }}
-          {{ range .Params.members }}
-            {{ $m := site.GetPage (printf "/members/%s" .) }}
-            {{ if $m }}{{ $members = $members | append $m }}{{ end }}
+    <nav class="meeting-toc" aria-label="On this page">
+      <div class="meeting-toc__inner">
+        <p class="meeting-toc__label">On this page</p>
+        <ul class="meeting-toc__list">
+          {{ range $projects }}
+          <li class="meeting-toc__item">
+            <a class="meeting-toc__link" href="#{{ .File.ContentBaseName }}">{{ .Title }}</a>
+          </li>
           {{ end }}
-          {{ if $members }}
-          <p class="notes-project__presenters">
-            {{ range $i, $m := $members }}{{ if $i }} &amp; {{ end }}<a href="{{ $m.RelPermalink }}">{{ $m.Title }}</a>{{ end }}
-          </p>
-          {{ end }}
-        </div>
-        <div class="notes-content about-body">
-          {{ .Content }}
-        </div>
+          <li class="meeting-toc__item">
+            <a class="meeting-toc__link" href="#meeting-notes">Meeting Notes</a>
+          </li>
+        </ul>
       </div>
-      {{ end }}
-    {{ else }}
-      {{ with .Params.members }}
-      <div class="notes-member-contexts">
-        {{ range . }}
-          {{ $m := site.GetPage (printf "/members/%s" .) }}
-          {{ with $m }}
-          <div class="notes-member-context">
-            <div class="notes-member-context__header">
-              <span class="notes-member-context__label">Member</span>
-              <a href="{{ .RelPermalink }}" class="notes-member-context__link">View passport →</a>
-            </div>
-            <p class="notes-member-context__name">{{ .Title }}</p>
-            {{ with .Params.role }}
-            <p class="notes-member-context__role">{{ . }}{{ with $m.Params.company }} · {{ . }}{{ end }}</p>
-            {{ end }}
-            <div class="notes-member-context__stats">
-              {{ with .Params.meetings_attended }}<span>{{ len . }} meeting{{ if gt (len .) 1 }}s{{ end }} attended</span>{{ end }}
-              {{ with .Params.presented_at }}<span>{{ len . }} presentation{{ if gt (len .) 1 }}s{{ end }}</span>{{ end }}
-              <span>Since {{ .Date.Format "January 2006" }}</span>
-            </div>
-          </div>
-          {{ end }}
-        {{ end }}
-      </div>
-      {{ end }}
+    </nav>
     {{ end }}
 
-    {{ with .Content }}
-    <div class="notes-content about-body">
-      {{ . }}
-    </div>
-    {{ end }}
-
-  </article>
+  </div>
 
 {{ end }}
