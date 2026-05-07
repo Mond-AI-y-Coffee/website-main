@@ -1,0 +1,149 @@
+{{ $org := dict
+  "@type" "Organization"
+  "@id" (printf "%s#organization" .Site.BaseURL)
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "logo" ("logo.svg" | absURL)
+  "contactPoint" (dict
+    "@type" "ContactPoint"
+    "email" "Adam.Gautsch@atdc.org"
+    "contactType" "organizer"
+  )
+}}
+
+{{ $graph := slice $org }}
+
+{{ if .IsHome }}
+  {{ $graph = $graph | append (dict
+    "@type" "WebSite"
+    "@id" (printf "%s#website" .Site.BaseURL)
+    "name" .Site.Title
+    "url" .Site.BaseURL
+    "description" (.Site.Params.description | default "A free weekly coffee meetup for AI builders and curious minds in Atlanta.")
+    "publisher" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+  ) }}
+
+  {{ $today := now.Format "2006-01-02" }}
+  {{ $next := false }}
+  {{ range (where site.RegularPages "Section" "notes").ByDate }}
+    {{ if and (not $next) (ge (.Date.Format "2006-01-02") $today) }}
+      {{ $next = . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $next }}
+    {{ $date := $next.Date.Format "2006-01-02" }}
+    {{ $graph = $graph | append (dict
+      "@type" "Event"
+      "@id" (printf "%s#next-meeting" .Site.BaseURL)
+      "name" (printf "Mond(AI)y Coffee - %s" ($next.Date.Format "January 2, 2006"))
+      "description" "A free weekly coffee meetup for AI builders and curious minds in Atlanta. No RSVP required."
+      "url" $next.Permalink
+      "startDate" (printf "%sT08:30:00-04:00" $date)
+      "endDate" (printf "%sT10:00:00-04:00" $date)
+      "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+      "eventStatus" "https://schema.org/EventScheduled"
+      "isAccessibleForFree" true
+      "organizer" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+      "location" (dict
+        "@type" "Place"
+        "name" "ATDC"
+        "address" (dict
+          "@type" "PostalAddress"
+          "streetAddress" "75 5th St NW, Suite 2230"
+          "addressLocality" "Atlanta"
+          "addressRegion" "GA"
+          "postalCode" "30308"
+          "addressCountry" "US"
+        )
+      )
+    ) }}
+  {{ end }}
+{{ end }}
+
+{{ if and .IsPage (eq .Section "members") }}
+  {{ $sameAs := slice }}
+  {{ with .Params.linkedin }}{{ $sameAs = $sameAs | append . }}{{ end }}
+  {{ with .Params.github }}{{ $sameAs = $sameAs | append . }}{{ end }}
+  {{ with .Params.website }}{{ $sameAs = $sameAs | append . }}{{ end }}
+  {{ $person := dict
+    "@type" "Person"
+    "@id" (printf "%s#person" .Permalink)
+    "name" .Title
+    "url" .Permalink
+    "memberOf" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+  }}
+  {{ with .Params.role }}{{ $person = merge $person (dict "jobTitle" .) }}{{ end }}
+  {{ with .Params.company }}{{ $person = merge $person (dict "worksFor" (dict "@type" "Organization" "name" .)) }}{{ end }}
+  {{ with .Params.location }}{{ $person = merge $person (dict "address" (dict "@type" "PostalAddress" "addressLocality" .)) }}{{ end }}
+  {{ if $sameAs }}{{ $person = merge $person (dict "sameAs" $sameAs) }}{{ end }}
+  {{ $graph = $graph | append $person }}
+{{ end }}
+
+{{ if and .IsPage (eq .Section "notes") }}
+  {{ $graph = $graph | append (dict
+    "@type" "Event"
+    "@id" (printf "%s#event" .Permalink)
+    "name" (printf "Mond(AI)y Coffee - %s" (.Date.Format "January 2, 2006"))
+    "url" .Permalink
+    "startDate" (printf "%sT08:30:00-04:00" (.Date.Format "2006-01-02"))
+    "endDate" (printf "%sT10:00:00-04:00" (.Date.Format "2006-01-02"))
+    "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+    "eventStatus" "https://schema.org/EventScheduled"
+    "isAccessibleForFree" true
+    "organizer" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+    "location" (dict
+      "@type" "Place"
+      "name" "ATDC"
+      "address" (dict
+        "@type" "PostalAddress"
+        "streetAddress" "75 5th St NW, Suite 2230"
+        "addressLocality" "Atlanta"
+        "addressRegion" "GA"
+        "postalCode" "30308"
+        "addressCountry" "US"
+      )
+    )
+  ) }}
+{{ end }}
+
+{{ if and .IsPage (eq .Section "projects") }}
+  {{ $work := dict
+    "@type" "CreativeWork"
+    "@id" (printf "%s#creative-work" .Permalink)
+    "name" .Title
+    "url" .Permalink
+    "isPartOf" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+  }}
+  {{ with .Params.presentation_date }}{{ $work = merge $work (dict "datePublished" .) }}{{ end }}
+  {{ with .Params.project_type }}{{ $work = merge $work (dict "genre" .) }}{{ end }}
+  {{ $graph = $graph | append $work }}
+{{ end }}
+
+{{ if not .IsHome }}
+  {{ $items := slice
+    (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL)
+  }}
+  {{ if .Section }}
+    {{ $sectionPage := site.GetPage .Section }}
+    {{ if $sectionPage }}
+      {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" $sectionPage.Title "item" $sectionPage.Permalink) }}
+      {{ if .IsPage }}
+        {{ $items = $items | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) }}
+      {{ end }}
+    {{ else }}
+      {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) }}
+    {{ end }}
+  {{ else }}
+    {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) }}
+  {{ end }}
+  {{ $graph = $graph | append (dict
+    "@type" "BreadcrumbList"
+    "@id" (printf "%s#breadcrumb" .Permalink)
+    "itemListElement" $items
+  ) }}
+{{ end }}
+
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}
+</script>

@@ -2,6 +2,11 @@ baseURL       = "https://mondaiycoffee.com/"
 languageCode  = "en-us"
 title         = "Mond(AI)y Coffee"
 buildFuture   = true   # allows upcoming speaker posts to appear before their date
+disableKinds  = ["taxonomy", "term"]
+
+[params]
+  description = "A free weekly coffee meetup for AI builders and curious minds in Atlanta. Every Monday at 8:30am at ATDC in Midtown. No RSVP required."
+  image       = "images/about-alex-lugo-presentation.jpg"
 
 [markup.goldmark.renderer]
   unsafe = true

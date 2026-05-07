@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+  {{ if .Pages }}
+  <section class="notes-list" aria-label="Projects shared at Mond(AI)y Coffee">
+    <h3 class="notes-list-heading">Projects</h3>
+    {{ range sort .Pages "Params.presentation_date" "desc" }}
+    <div class="notes-list-item">
+      <a class="notes-list-date" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="notes-list-presenter-row">
+        <span class="notes-list-presenter">
+          {{ with .Params.presentation_date }}{{ (time .).Format "Jan 2, 2006" }}{{ end }}
+        </span>
+        <a class="notes-list-read" href="{{ .RelPermalink }}">Read Project</a>
+      </span>
+    </div>
+    {{ end }}
+  </section>
+  {{ else }}
+    <p class="notes-empty">No shared projects yet.</p>
+  {{ end }}
+
+{{ end }}
