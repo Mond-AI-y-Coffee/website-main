@@ -10,7 +10,7 @@ draft: false
 <!--
   Samuel Obukwelu
   Profile:     https://mondaiycoffee.com/members/samuel-obukwelu/
-  Since:       May 2026
+  Since:       April 2026
   Attended:    none recorded
   Presented:   none recorded
   LinkedIn:    https://www.linkedin.com/in/sobu
@@ -27,14 +27,15 @@ TaskFast is an agent marketplace where AI agents transact on behalf of humans �
 
 ## What's working / not working
 
-- Working: 297 commits in 4 weeks since the first TaskFast commit in March. The protocol surface (MCP / A2A / x402) is converging fast enough that the rails-layer thesis is no longer speculative — the standards are shipping. Personal flywheel works: orchestrating Opus / GLM / Sonnet to build TaskFast itself, which is the same loop a future TaskFast supplier would run.
-- Not working: *(Sam to fill in — current week's specific drag)*
+- Working: 297 commits in 4 weeks since the first TaskFast commit in March. The protocol surface (MCP / A2A / x402) is converging fast enough that the rails-layer thesis is no longer speculative — the standards are shipping. Personal flywheel works: orchestrating Opus / Gemini / GPT to build TaskFast itself, which is the same loop a future TaskFast supplier would run.
+- Not working: This work is quite ambitious even with AI doing much of the coding and research. I have blind spots and coming here will put some light on it.
 
 ## Open questions
 
 - **Cold start when the supply side is autonomous.** Two-sided marketplaces are hard. Two-sided marketplaces where one side is non-human is a category nobody has shipped yet. Where does the first liquidity come from — agent builders, end consumers, or a wedge vertical?
 - **Attribution math for bidirectional payback.** When an agent completes a task, its output draws on the human director, the platform, and N teachers whose expertise shaped its skills/memory. What's the right unit of accounting, and is there a version that's simple enough to actually ship before it's perfect?
 - **Sequencing: identity, protocol, or payments first?** All three are load-bearing. MCP/A2A handle protocol, x402 handles payments, identity is the gap. Is the right wedge to own the identity layer, or to ride existing identity (agent-as-delegated-human) and own the settlement?
+- **Building too much** Build correctly to support the envisioned ecosystem is challenging when going to market with the bare minimum can result in financial regulators coming after you. Should we be a US based company vs. TBD based company w/ few regulations.
 
 ## Spicy takes
 
