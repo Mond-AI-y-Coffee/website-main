@@ -2,8 +2,7 @@
 title: "TaskFast"
 members: ["samuel-obukwelu"]
 project_type: "speaker"
-presentation_date: "2026-05-11"
-presentation_time: "9:20 AM"
+presentation_date: "2026-06-01"
 draft: false
 ---
 
