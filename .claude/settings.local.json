@@ -36,7 +36,11 @@
       "Skill(design-review)",
       "Skill(design-review:*)",
       "Skill(gstack-upgrade)",
-      "Skill(gstack-upgrade:*)"
+      "Skill(gstack-upgrade:*)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git commit *)"
     ]
   }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Mond(AI)y Coffee</title>
+    <link>https://mondaiycoffee.com/projects/</link>
+    <description>Recent content in Projects on Mond(AI)y Coffee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://mondaiycoffee.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Context System</title>
+      <link>https://mondaiycoffee.com/projects/ai-context-system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/ai-context-system/</guid>
+      <description>&lt;!--&#xA;  Adam Gautsch&#xA;  Profile:     https://mondaiycoffee.com/members/adam-gautsch/&#xA;  LinkedIn:    https://www.linkedin.com/in/adamgautsch/&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-are-you-building&#34;&gt;What are you building?&lt;/h2&gt;&#xA;&lt;p&gt;An Obsidian-first memory system for AI tools. A structured folder, a startup ritual, and a handful of command phrases that give Claude, Codex, or any agent persistent context — so every session can pick up where the last one left off, without re-explaining the project from scratch.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-core-idea&#34;&gt;The core idea&lt;/h2&gt;&#xA;&lt;p&gt;AI tools are stateless by default. Every session starts at zero. The fix isn&amp;rsquo;t a new app or a vector database — it&amp;rsquo;s a well-organized folder and a consistent startup sequence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Holograph Company</title>
+      <link>https://mondaiycoffee.com/projects/holograph-company/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/holograph-company/</guid>
+      <description>&lt;!--&#xA;  Ankush Tewari&#xA;  Profile:     https://mondaiycoffee.com/members/ankush-tewari/&#xA;  Since:       (not set)&#xA;  Attended:    none recorded&#xA;  Presented:   none recorded&#xA;  LinkedIn:    https://www.linkedin.com/in/ankushtewari/&#xA;  Looking for: Meeting with others in the Community.  Exchanging ideas with other people.  Hearing about how others are using AI. Learning how to improve my app from other builders.&#xA;--&gt;&#xA;&lt;!--&#xA;  Kissy Dabbs&#xA;  Profile:     https://mondaiycoffee.com/members/kissy-dabbs/&#xA;  Since:       (not set)&#xA;  Attended:    none recorded&#xA;  Presented:   none recorded&#xA;  LinkedIn:    https://www.linkedin.com/in/karen-kissy-dabbs-b8392045/&#xA;  Looking for: Meeting with others in the Community.  Exchanging ideas with other people.  Learnign more about AI in the legal world.&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-are-you-building&#34;&gt;What are you building?&lt;/h2&gt;&#xA;&lt;p&gt;Building and launching the Holograph Company MVP&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>No Meeting — Memorial Day</title>
+      <link>https://mondaiycoffee.com/projects/memorial-day-2026/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/memorial-day-2026/</guid>
+      <description>&lt;p&gt;No meeting this week — we&amp;rsquo;re taking Memorial Day off.&lt;/p&gt;&#xA;&lt;p&gt;See you next Monday, June 2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TaskFast</title>
+      <link>https://mondaiycoffee.com/projects/taskfast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/taskfast/</guid>
+      <description>&lt;!--&#xA;  Samuel Obukwelu&#xA;  Profile:     https://mondaiycoffee.com/members/samuel-obukwelu/&#xA;  Since:       May 2026&#xA;  Attended:    none recorded&#xA;  Presented:   none recorded&#xA;  LinkedIn:    https://www.linkedin.com/in/sobu&#xA;  Looking for: Builders working at the agentic edge, and good conversation over coffee on Mondays.&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-are-you-building&#34;&gt;What are you building?&lt;/h2&gt;&#xA;&lt;p&gt;TaskFast is an agent marketplace where AI agents transact on behalf of humans — the protocol, identity, and payments layer that lets autonomous agents act as first-class economic participants instead of glorified chatbots. The bet is that the next economy isn&amp;rsquo;t humans-using-AI, it&amp;rsquo;s agents-doing-work-for-humans, and that needs rails. We&amp;rsquo;re building the rails so every dollar of agent labor pays back to the human who directed it, the platform that hosted it, and the worker whose expertise taught it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

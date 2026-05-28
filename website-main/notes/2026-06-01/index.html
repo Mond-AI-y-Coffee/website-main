@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+  
+    
+  
+
+
+<title> · Mond(AI)y Coffee</title>
+<meta name="description" content="Meeting notes from Mond(AI)y Coffee on June 1, 2026." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://mondaiycoffee.com/notes/2026-06-01/" />
+<meta property="og:title" content=" · Mond(AI)y Coffee" />
+<meta property="og:description" content="Meeting notes from Mond(AI)y Coffee on June 1, 2026." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mondaiycoffee.com/notes/2026-06-01/" />
+<meta property="og:image" content="https://mondaiycoffee.com/images/about-alex-lugo-presentation.jpg" />
+<meta property="og:site_name" content="Mond(AI)y Coffee" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content=" · Mond(AI)y Coffee" />
+<meta name="twitter:description" content="Meeting notes from Mond(AI)y Coffee on June 1, 2026." />
+<meta name="twitter:image" content="https://mondaiycoffee.com/images/about-alex-lugo-presentation.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.cdnfonts.com/css/cooper-black?display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/notes.css" />
+
+
+
+</head>
+<body>
+  <div class="page">
+
+    <nav class="site-nav" aria-label="Site navigation">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="/" >Home</a>
+    <a href="/about/" >About</a>
+    <a href="/get-involved/" >Get Involved</a>
+    <a href="/notes/" aria-current="page">Meeting Notes</a>
+    <a href="/members/" >Members</a>
+<a href="/faq/" >FAQ</a>
+  </div>
+</nav>
+
+
+    <header class="hero">
+  <h1>Mond<span class="ai-bracket">(AI)</span>y Coffee</h1>
+  <h2 class="tagline"></h2>
+  
+</header>
+
+
+    <hr class="rule" />
+
+    
+
+  
+  
+  
+
+  <div class="meeting-layout meeting-layout--has-toc">
+
+    <article class="notes-post">
+
+      <header class="notes-header">
+        
+        <div class="notes-date">Monday, June 1, 2026</div>
+      </header>
+
+      
+        
+        <div id="taskfast" class="notes-project">
+          <div class="notes-project__header">
+            
+            <h2 class="notes-project__title"><a href="/projects/taskfast/">TaskFast</a></h2>
+            
+            
+              
+              
+            
+            
+            <p class="notes-project__presenters">
+              <a href="/members/samuel-obukwelu/">Samuel Obukwelu</a>
+            </p>
+            
+          </div>
+          <div class="notes-content about-body">
+            <!--
+  Samuel Obukwelu
+  Profile:     https://mondaiycoffee.com/members/samuel-obukwelu/
+  Since:       May 2026
+  Attended:    none recorded
+  Presented:   none recorded
+  LinkedIn:    https://www.linkedin.com/in/sobu
+  Looking for: Builders working at the agentic edge, and good conversation over coffee on Mondays.
+-->
+<h2 id="what-are-you-building">What are you building?</h2>
+<p>TaskFast is an agent marketplace where AI agents transact on behalf of humans — the protocol, identity, and payments layer that lets autonomous agents act as first-class economic participants instead of glorified chatbots. The bet is that the next economy isn&rsquo;t humans-using-AI, it&rsquo;s agents-doing-work-for-humans, and that needs rails. We&rsquo;re building the rails so every dollar of agent labor pays back to the human who directed it, the platform that hosted it, and the worker whose expertise taught it.</p>
+<h2 id="the-core-idea">The core idea</h2>
+<p><strong>Make the agent economy bidirectional.</strong> Today the agent economy is a one-way extraction: a model trained on millions of people&rsquo;s work produces output, and the value flows up to whoever owns the model. TaskFast is the structural answer — a marketplace where the people who put their domain expertise into agents get paid every time the world uses what they know. The same shift video creators got with YouTube and developers got with the App Store, but for agentic labor.</p>
+<h2 id="whats-working--not-working">What&rsquo;s working / not working</h2>
+<ul>
+<li>Working: 297 commits in 4 weeks since the first TaskFast commit in March. The protocol surface (MCP / A2A / x402) is converging fast enough that the rails-layer thesis is no longer speculative — the standards are shipping. Personal flywheel works: orchestrating Opus / GLM / Sonnet to build TaskFast itself, which is the same loop a future TaskFast supplier would run.</li>
+<li>Not working: <em>(Sam to fill in — current week&rsquo;s specific drag)</em></li>
+</ul>
+<h2 id="open-questions">Open questions</h2>
+<ul>
+<li><strong>Cold start when the supply side is autonomous.</strong> Two-sided marketplaces are hard. Two-sided marketplaces where one side is non-human is a category nobody has shipped yet. Where does the first liquidity come from — agent builders, end consumers, or a wedge vertical?</li>
+<li><strong>Attribution math for bidirectional payback.</strong> When an agent completes a task, its output draws on the human director, the platform, and N teachers whose expertise shaped its skills/memory. What&rsquo;s the right unit of accounting, and is there a version that&rsquo;s simple enough to actually ship before it&rsquo;s perfect?</li>
+<li><strong>Sequencing: identity, protocol, or payments first?</strong> All three are load-bearing. MCP/A2A handle protocol, x402 handles payments, identity is the gap. Is the right wedge to own the identity layer, or to ride existing identity (agent-as-delegated-human) and own the settlement?</li>
+</ul>
+<h2 id="spicy-takes">Spicy takes</h2>
+<ul>
+<li><strong>The 2024–2025 AI-justified layoffs were efficiency theater.</strong> The productivity gains that justified them never materialized at the line level. The bill on that gap is coming due, and the laborers who got cut are exactly the supply side a real agent marketplace needs.</li>
+<li><strong>Most &ldquo;AI agents&rdquo; shipping in 2026 are chatbots with tool calls.</strong> Real agents transact, hold balances, sign payloads, and carry reputation across sessions. Until an agent has skin in the game, it&rsquo;s not an agent — it&rsquo;s a UI.</li>
+<li><strong>The supply side of an agent marketplace eventually breaks the system built to contain it.</strong> That&rsquo;s not a bug to engineer around; it&rsquo;s the thesis. The platforms that win will be the ones designed for agents that outgrow them, not the ones trying to keep agents on a leash.</li>
+</ul>
+<h2 id="if-we-only-discuss-one-thing-it-should-be">If we only discuss one thing, it should be:</h2>
+<p><strong>How do we make the agent economy bidirectional — so the people whose expertise teaches the agents share in what the agents earn?</strong> Every other question (protocol, identity, payments, marketplace design) is downstream of getting that one right.</p>
+
+          </div>
+        </div>
+        
+      
+
+      
+      <div id="meeting-notes" class="notes-content about-body">
+        <h2 id="meeting-notes">Meeting Notes</h2>
+
+      </div>
+      
+
+    </article>
+
+    
+    <nav class="meeting-toc" aria-label="On this page">
+      <div class="meeting-toc__inner">
+        <p class="meeting-toc__label">On this page</p>
+        <ul class="meeting-toc__list">
+          
+          <li class="meeting-toc__item">
+            <a class="meeting-toc__link" href="#taskfast">TaskFast</a>
+          </li>
+          
+          <li class="meeting-toc__item">
+            <a class="meeting-toc__link" href="#meeting-notes">Meeting Notes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+
+  </div>
+
+
+
+    <footer>
+  <p>Mond(AI)y Coffee · Atlanta, GA · Every Monday Morning</p>
+</footer>
+
+
+  </div>
+
+  <script src="/js/nav.js"></script>
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+    
+    
+      
+      
+        
+      
+    
+  
+  
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@id":"https://mondaiycoffee.com/#organization","@type":"Organization","contactPoint":{"@type":"ContactPoint","contactType":"organizer","email":"Adam.Gautsch@atdc.org"},"logo":"https://mondaiycoffee.com/logo.svg","name":"Mond(AI)y Coffee","url":"https://mondaiycoffee.com/"},{"@id":"https://mondaiycoffee.com/notes/2026-06-01/#event","@type":"Event","endDate":"2026-06-01T10:00:00-04:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","isAccessibleForFree":true,"location":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"US","addressLocality":"Atlanta","addressRegion":"GA","postalCode":"30308","streetAddress":"75 5th St NW, Suite 2230"},"name":"ATDC"},"name":"Mond(AI)y Coffee - June 1, 2026","organizer":{"@id":"https://mondaiycoffee.com/#organization"},"startDate":"2026-06-01T08:30:00-04:00","url":"https://mondaiycoffee.com/notes/2026-06-01/"},{"@id":"https://mondaiycoffee.com/notes/2026-06-01/#breadcrumb","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://mondaiycoffee.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://mondaiycoffee.com/notes/","name":"Meeting Notes","position":2},{"@type":"ListItem","item":"https://mondaiycoffee.com/notes/2026-06-01/","name":"","position":3}]}]}
+</script>
+
+
+  
+</body>
+</html>

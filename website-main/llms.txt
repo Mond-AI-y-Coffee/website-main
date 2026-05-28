@@ -1,0 +1,16 @@
+# Mond(AI)y Coffee
+
+Mond(AI)y Coffee is a free weekly coffee meetup for AI builders and curious minds in Atlanta.
+
+## Core pages
+- Home: https://mondaiycoffee.com/
+- About: https://mondaiycoffee.com/about/
+- Get involved: https://mondaiycoffee.com/get-involved/
+- Meeting notes: https://mondaiycoffee.com/notes/
+- Members: https://mondaiycoffee.com/members/
+
+## Machine-readable indexes
+- Sitemap: https://mondaiycoffee.com/sitemap.xml
+- RSS: https://mondaiycoffee.com/index.xml
+- Meeting notes RSS: https://mondaiycoffee.com/notes/index.xml
+- Members JSON: https://mondaiycoffee.com/members/index.json

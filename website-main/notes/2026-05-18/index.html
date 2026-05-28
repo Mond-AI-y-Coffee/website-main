@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+  
+    
+  
+
+
+<title> · Mond(AI)y Coffee</title>
+<meta name="description" content="Meeting notes from Mond(AI)y Coffee on May 18, 2026." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://mondaiycoffee.com/notes/2026-05-18/" />
+<meta property="og:title" content=" · Mond(AI)y Coffee" />
+<meta property="og:description" content="Meeting notes from Mond(AI)y Coffee on May 18, 2026." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mondaiycoffee.com/notes/2026-05-18/" />
+<meta property="og:image" content="https://mondaiycoffee.com/images/about-alex-lugo-presentation.jpg" />
+<meta property="og:site_name" content="Mond(AI)y Coffee" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content=" · Mond(AI)y Coffee" />
+<meta name="twitter:description" content="Meeting notes from Mond(AI)y Coffee on May 18, 2026." />
+<meta name="twitter:image" content="https://mondaiycoffee.com/images/about-alex-lugo-presentation.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.cdnfonts.com/css/cooper-black?display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/notes.css" />
+
+
+
+</head>
+<body>
+  <div class="page">
+
+    <nav class="site-nav" aria-label="Site navigation">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="/" >Home</a>
+    <a href="/about/" >About</a>
+    <a href="/get-involved/" >Get Involved</a>
+    <a href="/notes/" aria-current="page">Meeting Notes</a>
+    <a href="/members/" >Members</a>
+<a href="/faq/" >FAQ</a>
+  </div>
+</nav>
+
+
+    <header class="hero">
+  <h1>Mond<span class="ai-bracket">(AI)</span>y Coffee</h1>
+  <h2 class="tagline"></h2>
+  
+</header>
+
+
+    <hr class="rule" />
+
+    
+
+  
+  
+  
+
+  <div class="meeting-layout meeting-layout--has-toc">
+
+    <article class="notes-post">
+
+      <header class="notes-header">
+        
+        <div class="notes-date">Monday, May 18, 2026</div>
+      </header>
+
+      
+        
+        <div id="ai-context-system" class="notes-project">
+          <div class="notes-project__header">
+            
+            <h2 class="notes-project__title"><a href="/projects/ai-context-system/">AI Context System</a></h2>
+            
+            
+              
+              
+            
+            
+            <p class="notes-project__presenters">
+              <a href="/members/adam-gautsch/">Adam Gautsch</a>
+            </p>
+            
+          </div>
+          <div class="notes-content about-body">
+            <!--
+  Adam Gautsch
+  Profile:     https://mondaiycoffee.com/members/adam-gautsch/
+  LinkedIn:    https://www.linkedin.com/in/adamgautsch/
+-->
+<h2 id="what-are-you-building">What are you building?</h2>
+<p>An Obsidian-first memory system for AI tools. A structured folder, a startup ritual, and a handful of command phrases that give Claude, Codex, or any agent persistent context — so every session can pick up where the last one left off, without re-explaining the project from scratch.</p>
+<h2 id="the-core-idea">The core idea</h2>
+<p>AI tools are stateless by default. Every session starts at zero. The fix isn&rsquo;t a new app or a vector database — it&rsquo;s a well-organized folder and a consistent startup sequence.</p>
+<p>The system lives in <code>AI/</code> inside my Obsidian vault. When I start a session, Claude reads six files in order:</p>
+<ol>
+<li><code>START.md</code> — orientation</li>
+<li><code>Adam.md</code> — who I am, how I work</li>
+<li><code>Context/Preferences.md</code> — style and working defaults</li>
+<li><code>Context/TechStack.md</code> — tools I actually use</li>
+<li><code>Context/CurrentState.md</code> — what I&rsquo;m actively working on</li>
+<li>The relevant <code>Projects/[Project].md</code> — full project state</li>
+</ol>
+<p>After that, the agent knows enough to be useful without a five-minute briefing.</p>
+<h2 id="whats-working--not-working">What&rsquo;s working / not working</h2>
+<p><strong>Working:</strong></p>
+<ul>
+<li>Phase 1 is live — git-tracked <code>AI/</code> folder with full folder structure, operating rules, and three seeded domain Brains (House, Car, HomeLab)</li>
+<li><code>_System/AI-Behavior.md</code> is the bootstrap file — Claude reads it on every session start</li>
+<li><code>INDEX.md</code> is the machine-maintained manifest of all projects and Brains</li>
+<li>Session closeout is a command: say &ldquo;Capture this session&rdquo; → 8-step workflow writes updates back to Obsidian</li>
+</ul>
+<p><strong>Not working yet:</strong></p>
+<ul>
+<li>Bridge files for active code projects (<code>AGENTS.md</code> / <code>CLAUDE.md</code> pointers) aren&rsquo;t in place — agents launched inside a project folder don&rsquo;t yet auto-discover the AI brain</li>
+<li>Placeholder content in <code>Brains/House/STATE.md</code> and <code>Brains/Car/STATE.md</code></li>
+<li>No remote git backup yet</li>
+</ul>
+<h2 id="open-questions">Open questions</h2>
+<ul>
+<li>What&rsquo;s the right threshold for &ldquo;this project needs a bridge file&rdquo;? Every code repo? Only active ones?</li>
+<li>Should people, contacts, or relationships get their own Brain section eventually?</li>
+<li>How much maintenance is too much — where does &ldquo;useful system&rdquo; become &ldquo;second job&rdquo;?</li>
+</ul>
+<h2 id="spicy-takes">Spicy takes</h2>
+<ul>
+<li>Most &ldquo;AI memory&rdquo; products are the wrong abstraction. You don&rsquo;t need a proprietary tool or a hosted embedding store. You need a folder, a checklist, and discipline.</li>
+<li>The startup ritual matters more than the folder structure. Six files read in order beats a thousand disorganized notes.</li>
+<li>Plain markdown is the right format — readable by humans, readable by any AI tool, version-controllable, and zero vendor lock-in.</li>
+<li>Context is a habit, not a feature. The system only works if you close sessions properly. &ldquo;Capture this session&rdquo; has to become as automatic as saving a file.</li>
+</ul>
+<h2 id="if-we-only-discuss-one-thing">If we only discuss one thing</h2>
+<p><strong>What would your startup ritual look like?</strong></p>
+<p>The six-file sequence is the kernel of the whole system. Everything else — folder structure, Brains, commands — is scaffolding around that ritual. If you wanted to steal one thing and adapt it to your own setup, that&rsquo;s the one.</p>
+<hr>
+<p><em>Built on: Obsidian + plain markdown + git. No special tools required.</em></p>
+
+          </div>
+        </div>
+        
+      
+
+      
+      <div id="meeting-notes" class="notes-content about-body">
+        <h2 id="meeting-notes">Meeting Notes</h2>
+<p>When one person shares an Obsidian file soon others follow. We ended up passing the aux around a little sharing our setups in Obsidian and Notion and talking broadly about how to personalize your AI for your brain and workflow.</p>
+
+      </div>
+      
+
+    </article>
+
+    
+    <nav class="meeting-toc" aria-label="On this page">
+      <div class="meeting-toc__inner">
+        <p class="meeting-toc__label">On this page</p>
+        <ul class="meeting-toc__list">
+          
+          <li class="meeting-toc__item">
+            <a class="meeting-toc__link" href="#ai-context-system">AI Context System</a>
+          </li>
+          
+          <li class="meeting-toc__item">
+            <a class="meeting-toc__link" href="#meeting-notes">Meeting Notes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+
+  </div>
+
+
+
+    <footer>
+  <p>Mond(AI)y Coffee · Atlanta, GA · Every Monday Morning</p>
+</footer>
+
+
+  </div>
+
+  <script src="/js/nav.js"></script>
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+    
+    
+      
+      
+        
+      
+    
+  
+  
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@id":"https://mondaiycoffee.com/#organization","@type":"Organization","contactPoint":{"@type":"ContactPoint","contactType":"organizer","email":"Adam.Gautsch@atdc.org"},"logo":"https://mondaiycoffee.com/logo.svg","name":"Mond(AI)y Coffee","url":"https://mondaiycoffee.com/"},{"@id":"https://mondaiycoffee.com/notes/2026-05-18/#event","@type":"Event","endDate":"2026-05-18T10:00:00-04:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","isAccessibleForFree":true,"location":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"US","addressLocality":"Atlanta","addressRegion":"GA","postalCode":"30308","streetAddress":"75 5th St NW, Suite 2230"},"name":"ATDC"},"name":"Mond(AI)y Coffee - May 18, 2026","organizer":{"@id":"https://mondaiycoffee.com/#organization"},"startDate":"2026-05-18T08:30:00-04:00","url":"https://mondaiycoffee.com/notes/2026-05-18/"},{"@id":"https://mondaiycoffee.com/notes/2026-05-18/#breadcrumb","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://mondaiycoffee.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://mondaiycoffee.com/notes/","name":"Meeting Notes","position":2},{"@type":"ListItem","item":"https://mondaiycoffee.com/notes/2026-05-18/","name":"","position":3}]}]}
+</script>
+
+
+  
+</body>
+</html>

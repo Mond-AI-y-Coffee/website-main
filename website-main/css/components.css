@@ -25,6 +25,8 @@
   color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
+  padding: 0.7rem 0;
+  display: inline-block;
 }
 
 .site-nav a:hover,
@@ -97,18 +99,21 @@ h1 .ai-bracket {
 
 h2.tagline {
   font-family: 'Lora', Georgia, serif;
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   font-weight: 400;
   font-style: italic;
-  color: var(--muted);
-  max-width: 480px;
-  line-height: 1.5;
+  color: var(--brown);
+  max-width: 520px;
+  line-height: 1.55;
 }
 
 .hero-contact {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
   color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  max-width: 480px;
 }
 
 .hero-contact a {
@@ -238,6 +243,19 @@ footer {
   color: var(--brown);
   max-width: 640px;
   margin-bottom: 1.25rem;
+}
+
+.about-body ul,
+.about-body ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.about-body li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  max-width: 640px;
 }
 
 .about-body a {

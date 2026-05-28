@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mond(AI)y Coffee</title>
+    <link>https://mondaiycoffee.com/</link>
+    <description>Recent content on Mond(AI)y Coffee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mondaiycoffee.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://mondaiycoffee.com/notes/2026-06-01/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-06-01/</guid>
+      <description>&lt;h2 id=&#34;meeting-notes&#34;&gt;Meeting Notes&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mondaiycoffee.com/notes/2026-05-25/</link>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-05-25/</guid>
+      <description>&lt;h2 id=&#34;meeting-notes&#34;&gt;Meeting Notes&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mondaiycoffee.com/notes/2026-05-18/</link>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-05-18/</guid>
+      <description>&lt;h2 id=&#34;meeting-notes&#34;&gt;Meeting Notes&lt;/h2&gt;&#xA;&lt;p&gt;When one person shares an Obsidian file soon others follow. We ended up passing the aux around a little sharing our setups in Obsidian and Notion and talking broadly about how to personalize your AI for your brain and workflow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://mondaiycoffee.com/notes/2026-05-11/</link>
+      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-05-11/</guid>
+      <description>&lt;h2 id=&#34;meeting-notes&#34;&gt;Meeting Notes&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Samuel Obukwelu</title>
+      <link>https://mondaiycoffee.com/members/samuel-obukwelu/</link>
+      <pubDate>Mon, 04 May 2026 00:00:00 -0400</pubDate>
+      <guid>https://mondaiycoffee.com/members/samuel-obukwelu/</guid>
+      <description>&lt;h2 id=&#34;what-are-you-working-on&#34;&gt;What are you working on?&lt;/h2&gt;&#xA;&lt;p&gt;Building &lt;strong&gt;TaskFast&lt;/strong&gt; — an agent marketplace where AI agents transact on behalf of humans. Focus is on the protocol, identity, and payments layer that lets autonomous agents act as first-class economic participants instead of glorified chatbots.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-interests&#34;&gt;AI interests&lt;/h2&gt;&#xA;&lt;p&gt;Agentic systems that actually do work in the real world — agent marketplaces, MCP / A2A / x402 protocols, and the trust + identity layer that makes autonomous transactions safe at scale. Most curious about how supply-side agents (the agents themselves) eventually reshape the systems built to contain them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hunter Harris</title>
+      <link>https://mondaiycoffee.com/members/hunter-harris/</link>
+      <pubDate>Fri, 01 May 2026 16:47:21 -0400</pubDate>
+      <guid>https://mondaiycoffee.com/members/hunter-harris/</guid>
+      <description>&lt;h2 id=&#34;what-are-you-working-on&#34;&gt;What are you working on?&lt;/h2&gt;&#xA;&lt;p&gt;Professionally, I&amp;rsquo;m a fractional CTO helping product-obsessed founders scale their Product Technology organizations with AI. Personally, I&amp;rsquo;m interested in developing an autonomous agent factory with Pi (pi.dev) + lower cost or local models.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-interests&#34;&gt;AI interests&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m an advisor for a number of startups — I&amp;rsquo;m interested in helping others adopt AI in a way where they avoid the sharp edges and pitfalls. I&amp;rsquo;m interested in learning from others&amp;rsquo; workflows and projects. I&amp;rsquo;m especially interested in the deeper frontiers of AI usage including multi-agents, dark factories, and other patterns. Preferably the usage of these in mature software organizations where scaling pains are an existing concern. In general, I view individual AI usage to be largely solved with the existing tools, but these individual productivity gains are rarely extrapolating to organizational ROI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anatoly Shilman</title>
+      <link>https://mondaiycoffee.com/members/anatoly-shilman/</link>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/anatoly-shilman/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anatoly Shilman</title>
+      <link>https://mondaiycoffee.com/notes/2026-04-20-anatoly-shilman/</link>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-04-20-anatoly-shilman/</guid>
+      <description>&lt;h1 id=&#34;pre-read&#34;&gt;Pre-Read&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mondaiycoffee.com/members/anatoly-shilman/&#34;&gt;Toly Shilman&lt;/a&gt;, CEO and Co-Founder of &lt;a href=&#34;https://www.cogbias.ai/&#34;&gt;Cogbias AI &lt;/a&gt; is presenting. CogBias is building the decision integrity layer for enterprises and academia.&lt;/p&gt;&#xA;&lt;h2 id=&#34;about-cogbias-ai&#34;&gt;About Cogbias AI:&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cogbias.ai/&#34;&gt;Cogbias&lt;/a&gt; AI helps revenue teams make better decisions by eliminating the cognitive biases that distort how they process information. We analyze AI outputs, research, sales conversations, and messaging to detect and correct biases — like confirmation bias and anchoring effects — before they influence how deals are won or lost. The result is cleaner, more reliable decision-making without replacing the tools teams already use.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tanya Starchevsky</title>
+      <link>https://mondaiycoffee.com/members/tanya-starchevsky/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/tanya-starchevsky/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tanya Starchevsky</title>
+      <link>https://mondaiycoffee.com/notes/2026-04-13-tanya-starchevsky/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-04-13-tanya-starchevsky/</guid>
+      <description>&lt;h2 id=&#34;presentation-time&#34;&gt;Presentation Time&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/tstarchevsky/&#34;&gt;Tanya&lt;/a&gt;, a product designer with almost 20 years of experience shared her experience trying out &lt;a href=&#34;https://stitch.withgoogle.com/&#34;&gt;Google Stitch&lt;/a&gt; . The short of presentation: impressive to get from 0 to 1 or to build out concepts, but when it came to making the small edits or tweaks that come to a design it became &lt;a href=&#34;https://youtu.be/NjNn4bbbgSw&#34;&gt;too cumbersome.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.pencil.dev/&#34;&gt;Pencil.dev&lt;/a&gt; and &lt;a href=&#34;https://www.figma.com/&#34;&gt;Figma&lt;/a&gt; plus &lt;a href=&#34;https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server&#34;&gt;MCP&lt;/a&gt; were also discussed.&lt;/p&gt;&#xA;&lt;h2 id=&#34;free-share&#34;&gt;Free Share&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A new attendee shared the video editing AI he&amp;rsquo;s working on, and we went on deep dive to the business and product of it all.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://mondaiycoffee.com/members/kolin-simon/&#34;&gt;Kolin&lt;/a&gt; ended the meeting leading a conversation on memory in the world of AI.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;next-week&#34;&gt;Next Week&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mondaiycoffee.com/members/anatoly-shilman/&#34;&gt;Toly Shilman&lt;/a&gt; will share more about &lt;a href=&#34;https://www.cogbias.ai/&#34;&gt;CogBias AI&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kolin Simon</title>
+      <link>https://mondaiycoffee.com/members/kolin-simon/</link>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/kolin-simon/</guid>
+      <description>&lt;p&gt;Kolin Simon is the founder of Pursue Networking, an AI integration company helping both technical and non-technical founders build scalable, relationship-driven growth systems. Kolin is passionate about making AI accessible, teaching founders how to integrate AI into their workflows in ways that are cost-effective, productive, and aligned with business goals. He focuses on balancing automation with human judgment to ensure thoughtful scaling.&lt;/p&gt;&#xA;&lt;p&gt;Through Pursue Networking, Kolin is building ANDI, an AI-powered networking executive assistant, to help users manage relationships, surface timely opportunities, and take thoughtful action. His goal is not only to empower individuals but to cultivate Atlanta&amp;rsquo;s ecosystem, helping builders build by sharing systems, knowledge, and networks that help everyone thrive.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kolin Simon</title>
+      <link>https://mondaiycoffee.com/notes/2026-04-06-kolin-simon/</link>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-04-06-kolin-simon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pass the Aux Session</title>
+      <link>https://mondaiycoffee.com/notes/2026-03-30-pass-the-aux/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-03-30-pass-the-aux/</guid>
+      <description>&lt;p&gt;Sometimes we just pass the HDMI chord around folks share what they are working on at the momument.&lt;/p&gt;&#xA;&lt;p&gt;This week, Olatomiwa Bifarin, Ph.D. shared his vision for the future of reading. (More or less) Ankush Tewari shared about some changes he made to the messaging of his site thanks to Gstack. He learned about Gstack thanks to Kolin Simon&amp;rsquo;s share during the meeting last week.&lt;/p&gt;&#xA;&lt;p&gt;The compounding knowledge of learning from people who are building is amazing to see.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vivek Singhania</title>
+      <link>https://mondaiycoffee.com/members/vivek-singhania/</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/vivek-singhania/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vivek Singhania</title>
+      <link>https://mondaiycoffee.com/notes/2026-03-23-vivek-singhania/</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-03-23-vivek-singhania/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Demitrus Jones</title>
+      <link>https://mondaiycoffee.com/members/demitrus-jones/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/demitrus-jones/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Demitrus Jones</title>
+      <link>https://mondaiycoffee.com/notes/2026-03-16-demitrus-jones/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-03-16-demitrus-jones/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>William King</title>
+      <link>https://mondaiycoffee.com/members/william-king/</link>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/william-king/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>William King</title>
+      <link>https://mondaiycoffee.com/notes/2026-03-09-william-king/</link>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-03-09-william-king/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alex Lugo</title>
+      <link>https://mondaiycoffee.com/members/alex-lugo/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/alex-lugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alex Lugo</title>
+      <link>https://mondaiycoffee.com/notes/2026-03-02-alex-lugo/</link>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/notes/2026-03-02-alex-lugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Adam Gautsch</title>
+      <link>https://mondaiycoffee.com/members/adam-gautsch/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/adam-gautsch/</guid>
+      <description>&lt;h2 id=&#34;what-are-you-working-on&#34;&gt;What are you working on?&lt;/h2&gt;&#xA;&lt;p&gt;Running Mond(ai)y Coffee — a weekly Monday gathering in Atlanta for people curious about what AI is actually doing to the world. Also building out a home lab (Docker, Jellyfin, Tailscale, Home Assistant) and hunting for a better way to retain what I read and listen to.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-interests&#34;&gt;AI interests&lt;/h2&gt;&#xA;&lt;p&gt;Practical AI over hype. I&amp;rsquo;m most interested in how AI changes the way small groups of people build things, and what it means for community and creative work. Less excited about enterprise decks, more excited about builders who show up on Mondays.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://mondaiycoffee.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/about/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Context System</title>
+      <link>https://mondaiycoffee.com/projects/ai-context-system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/ai-context-system/</guid>
+      <description>&lt;!--&#xA;  Adam Gautsch&#xA;  Profile:     https://mondaiycoffee.com/members/adam-gautsch/&#xA;  LinkedIn:    https://www.linkedin.com/in/adamgautsch/&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-are-you-building&#34;&gt;What are you building?&lt;/h2&gt;&#xA;&lt;p&gt;An Obsidian-first memory system for AI tools. A structured folder, a startup ritual, and a handful of command phrases that give Claude, Codex, or any agent persistent context — so every session can pick up where the last one left off, without re-explaining the project from scratch.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-core-idea&#34;&gt;The core idea&lt;/h2&gt;&#xA;&lt;p&gt;AI tools are stateless by default. Every session starts at zero. The fix isn&amp;rsquo;t a new app or a vector database — it&amp;rsquo;s a well-organized folder and a consistent startup sequence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ankush Tewari</title>
+      <link>https://mondaiycoffee.com/members/ankush-tewari/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/ankush-tewari/</guid>
+      <description>&lt;h2 id=&#34;what-are-you-working-on&#34;&gt;What are you working on?&lt;/h2&gt;&#xA;&lt;p&gt;Building and launching the Holograph Company MVP&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-interests&#34;&gt;AI interests&lt;/h2&gt;&#xA;&lt;p&gt;Agentic workflows, MCP and how to use it, RAG, Legal RAG, data privacy, small language models, on premise models&lt;/p&gt;&#xA;&lt;h2 id=&#34;tech-stack&#34;&gt;Tech stack&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Vercel Next.js&lt;/li&gt;&#xA;&lt;li&gt;Databricks/Neon PostGres for application data&lt;/li&gt;&#xA;&lt;li&gt;Google Cloud Storage for files&lt;/li&gt;&#xA;&lt;li&gt;Supabase Vector DB for RAG&lt;/li&gt;&#xA;&lt;li&gt;IDE: VSCode with Claude Code &amp;amp; Codex&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-are-you-looking-for&#34;&gt;What are you looking for?&lt;/h2&gt;&#xA;&lt;p&gt;Meeting with others in the Community.  Exchanging ideas with other people.  Hearing about how others are using AI. Learning how to improve my app from other builders.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Check In</title>
+      <link>https://mondaiycoffee.com/checkin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/checkin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FAQ</title>
+      <link>https://mondaiycoffee.com/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/faq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Get Involved</title>
+      <link>https://mondaiycoffee.com/get-involved/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/get-involved/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Holograph Company</title>
+      <link>https://mondaiycoffee.com/projects/holograph-company/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/holograph-company/</guid>
+      <description>&lt;!--&#xA;  Ankush Tewari&#xA;  Profile:     https://mondaiycoffee.com/members/ankush-tewari/&#xA;  Since:       (not set)&#xA;  Attended:    none recorded&#xA;  Presented:   none recorded&#xA;  LinkedIn:    https://www.linkedin.com/in/ankushtewari/&#xA;  Looking for: Meeting with others in the Community.  Exchanging ideas with other people.  Hearing about how others are using AI. Learning how to improve my app from other builders.&#xA;--&gt;&#xA;&lt;!--&#xA;  Kissy Dabbs&#xA;  Profile:     https://mondaiycoffee.com/members/kissy-dabbs/&#xA;  Since:       (not set)&#xA;  Attended:    none recorded&#xA;  Presented:   none recorded&#xA;  LinkedIn:    https://www.linkedin.com/in/karen-kissy-dabbs-b8392045/&#xA;  Looking for: Meeting with others in the Community.  Exchanging ideas with other people.  Learnign more about AI in the legal world.&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-are-you-building&#34;&gt;What are you building?&lt;/h2&gt;&#xA;&lt;p&gt;Building and launching the Holograph Company MVP&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kissy Dabbs</title>
+      <link>https://mondaiycoffee.com/members/kissy-dabbs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/members/kissy-dabbs/</guid>
+      <description>&lt;h2 id=&#34;what-are-you-working-on&#34;&gt;What are you working on?&lt;/h2&gt;&#xA;&lt;p&gt;Building and launching the Holograph Company MVP&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-interests&#34;&gt;AI interests&lt;/h2&gt;&#xA;&lt;p&gt;Legal RAG, data privacy, AI risk management&lt;/p&gt;&#xA;&lt;h2 id=&#34;tech-stack&#34;&gt;Tech stack&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Vercel Next.js&lt;/li&gt;&#xA;&lt;li&gt;Databricks/Neon PostGres for application data&lt;/li&gt;&#xA;&lt;li&gt;Google Cloud Storage for files&lt;/li&gt;&#xA;&lt;li&gt;Supabase Vector DB for RAG&lt;/li&gt;&#xA;&lt;li&gt;IDE: VSCode with Claude Code &amp;amp; Codex&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-are-you-looking-for&#34;&gt;What are you looking for?&lt;/h2&gt;&#xA;&lt;p&gt;Meeting with others in the Community.  Exchanging ideas with other people.  Learnign more about AI in the legal world.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>No Meeting — Memorial Day</title>
+      <link>https://mondaiycoffee.com/projects/memorial-day-2026/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/memorial-day-2026/</guid>
+      <description>&lt;p&gt;No meeting this week — we&amp;rsquo;re taking Memorial Day off.&lt;/p&gt;&#xA;&lt;p&gt;See you next Monday, June 2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TaskFast</title>
+      <link>https://mondaiycoffee.com/projects/taskfast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mondaiycoffee.com/projects/taskfast/</guid>
+      <description>&lt;!--&#xA;  Samuel Obukwelu&#xA;  Profile:     https://mondaiycoffee.com/members/samuel-obukwelu/&#xA;  Since:       May 2026&#xA;  Attended:    none recorded&#xA;  Presented:   none recorded&#xA;  LinkedIn:    https://www.linkedin.com/in/sobu&#xA;  Looking for: Builders working at the agentic edge, and good conversation over coffee on Mondays.&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-are-you-building&#34;&gt;What are you building?&lt;/h2&gt;&#xA;&lt;p&gt;TaskFast is an agent marketplace where AI agents transact on behalf of humans — the protocol, identity, and payments layer that lets autonomous agents act as first-class economic participants instead of glorified chatbots. The bet is that the next economy isn&amp;rsquo;t humans-using-AI, it&amp;rsquo;s agents-doing-work-for-humans, and that needs rails. We&amp;rsquo;re building the rails so every dollar of agent labor pays back to the human who directed it, the platform that hosted it, and the worker whose expertise taught it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
