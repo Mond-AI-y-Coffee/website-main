@@ -23,10 +23,12 @@
     "publisher" (dict "@id" (printf "%s#organization" .Site.BaseURL))
   ) }}
 
-  {{ $today := now.Format "2006-01-02" }}
+  {{/* Must match the "Next Meeting" logic in layouts/index.html:
+       a meeting stays "next" until it ends at 10:00 am Atlanta time. */}}
   {{ $next := false }}
   {{ range (where site.RegularPages "Section" "notes").ByDate }}
-    {{ if and (not $next) (ge (.Date.Format "2006-01-02") $today) }}
+    {{ $meetingEnd := .Date.Add (time.Duration "hour" 10) }}
+    {{ if and (not $next) (now.Before $meetingEnd) }}
       {{ $next = . }}
     {{ end }}
   {{ end }}

@@ -1,10 +1,12 @@
 {{ define "main" }}
 
-  <!-- Next Meeting — auto-pulled from the nearest upcoming notes post -->
-  {{ $today := now.Format "2006-01-02" }}
+  <!-- Next Meeting — auto-pulled from the nearest upcoming notes post.
+       A meeting counts as "next" until it ends at 10:00 am Atlanta time, so the
+       homepage shows today's meeting all morning, then rolls to the following week. -->
   {{ $next := false }}
   {{ range (where site.RegularPages "Section" "notes").ByDate }}
-    {{ if and (not $next) (ge (.Date.Format "2006-01-02") $today) }}
+    {{ $meetingEnd := .Date.Add (time.Duration "hour" 10) }}
+    {{ if and (not $next) (now.Before $meetingEnd) }}
       {{ $next = . }}
     {{ end }}
   {{ end }}

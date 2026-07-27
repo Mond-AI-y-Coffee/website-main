@@ -1,6 +1,7 @@
 baseURL       = "https://mondaiycoffee.com/"
 languageCode  = "en-us"
 title         = "Mond(AI)y Coffee"
+timeZone      = "America/New_York"   # so "Next Meeting" rolls on Atlanta time, DST included
 buildFuture   = true   # allows upcoming speaker posts to appear before their date
 disableKinds  = ["taxonomy", "term"]
 

@@ -5,7 +5,12 @@ on:
     branches: ["main"]
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * 1'   # Every Monday at 12:00 UTC (8 AM EDT)
+    - cron: '0 12 * * 1'   # Every Monday at 12:00 UTC (8 AM EDT) — before coffee
+    # After coffee ends (10 AM ET), so "Next Meeting" rolls to the following week.
+    # Both are listed because GitHub cron is UTC-only and ET shifts with DST;
+    # whichever lands after 10 AM local does the roll, the other is a no-op rebuild.
+    - cron: '5 14 * * 1'   # 10:05 AM EDT (summer)
+    - cron: '5 15 * * 1'   # 10:05 AM EST (winter)
 
 permissions:
   contents: read
