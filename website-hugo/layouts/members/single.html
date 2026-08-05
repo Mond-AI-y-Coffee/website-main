@@ -19,7 +19,13 @@
       <div class="member-presentations">
         <h3 class="member-presentations__heading">Presented On</h3>
         {{ range $presentations }}
-          {{ $note := site.GetPage (printf "/notes/%s" .Params.presentation_date) }}
+          {{/* A speaker can be booked before a date is set (new-project.js seeds an empty
+               presentation_date), so guard before building the note path — an empty date
+               resolves to the /notes/ list page and then blows up in `time`. */}}
+          {{ $note := false }}
+          {{ with .Params.presentation_date }}
+            {{ $note = site.GetPage (printf "/notes/%s" .) }}
+          {{ end }}
           <div class="member-presentations__item">
             {{ if $note }}
             <a href="{{ $note.RelPermalink }}" class="member-presentations__link">
