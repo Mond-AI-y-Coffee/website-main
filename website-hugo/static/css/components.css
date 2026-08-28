@@ -547,3 +547,54 @@ details[open] .faq-question::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Speak Page ─────────────────────────────────────────────── */
+.speak-steps {
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+}
+
+.speak-steps li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+}
+
+.prompt-block {
+  border-left: 3px solid var(--amber);
+  background: rgba(200, 117, 10, 0.06);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  max-width: 640px;
+  overflow-x: auto;
+}
+
+.prompt-block__label {
+  display: block;
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.6rem;
+}
+
+.prompt-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.prompt-block code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--espresso);
+}
+
+.prompt-block--warn {
+  border-left-color: var(--muted);
+  background: rgba(122, 92, 58, 0.08);
+}

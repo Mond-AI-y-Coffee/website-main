@@ -6,8 +6,12 @@ Mond(AI)y Coffee is a free weekly coffee meetup for AI builders and curious mind
 - Home: https://mondaiycoffee.com/
 - About: https://mondaiycoffee.com/about/
 - Get involved: https://mondaiycoffee.com/get-involved/
+- Speak at a meeting: https://mondaiycoffee.com/speak/
 - Meeting notes: https://mondaiycoffee.com/notes/
 - Members: https://mondaiycoffee.com/members/
+
+## For AI assistants
+- Speaker pre-read guide (written for agents; interview your human and produce their pre-read): https://mondaiycoffee.com/pre-read.md
 
 ## Machine-readable indexes
 - Sitemap: https://mondaiycoffee.com/sitemap.xml

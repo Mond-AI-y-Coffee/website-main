@@ -1,0 +1,115 @@
+{{ define "main" }}
+
+  <div class="about-body">
+
+    <section class="involve-section" aria-label="Want to speak">
+      <h3 class="section-heading">Want to Speak?</h3>
+      <p><strong>Start with the pre-read.</strong> It's one page, it takes about ten minutes, and it's how speaking dates get assigned.</p>
+      <p>You don't need to know your topic. That's the part we'll help with.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="Who speaks here">
+      <h3 class="section-heading">Who Speaks Here</h3>
+      <p>Everyone in this room is a practitioner. Nobody is a featured expert.</p>
+      <p>You don't need a finished product, a funding round, or a talk you've given before. You don't need slides. The best sessions come from someone in the middle of a hard problem who wants help thinking it through — and leaves with three answers they didn't walk in with.</p>
+      <p>If you're building with AI and something about it is genuinely hard right now, you have a session. You may just not know which part of it yet.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="How it works">
+      <h3 class="section-heading">How It Works</h3>
+      <ol class="speak-steps">
+        <li><strong>Point your AI at what you're building.</strong> Your repo, your working folder, your notes.</li>
+        <li><strong>It comes back with three things worth presenting.</strong> You pick one, or tell it what it missed.</li>
+        <li><strong>Ten minutes of questions, and you have a pre-read.</strong></li>
+        <li><strong>Send it to Adam.</strong> We find you a Monday.</li>
+      </ol>
+      <p>That order is deliberate. The pre-read is what the room reads beforehand so the conversation starts at depth instead of climbing out of small talk. Writing it first means you show up to a room that has already thought about your problem.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="Let your AI read your project">
+      <h3 class="section-heading">Step One — Let Your AI Read Your Project</h3>
+      <p>The useful version of this isn't a questionnaire. It's letting something that has actually read your work tell you which part of it a room would find interesting — because you're too close to it to see that yourself.</p>
+      <p>Open your project in whatever agent you use — Claude Code, Codex, Cursor, Copilot — and paste this:</p>
+
+      <div class="prompt-block">
+        <span class="prompt-block__label">Prompt</span>
+        <pre><code>Read https://mondaiycoffee.com/pre-read.md. Then look through
+this project and help me work out what's worth presenting at
+Mond(ai)y Coffee.</code></pre>
+      </div>
+
+      <p>It'll read what you're building, come back with three candidate talks, and argue with you about which one is real. Then it asks the handful of questions it can't answer from your files, and hands you a finished markdown file.</p>
+      <p><strong>Not working out of a folder?</strong> The same prompt works in Claude, ChatGPT, or Gemini — give it a public repo link, a design doc, or your notes instead. It works with less. It just works better with more.</p>
+      <p><strong>Prefer to write it yourself?</strong> The full guide and template are at <a href="/pre-read.md">mondaiycoffee.com/pre-read.md</a> — a plain markdown file, readable by humans too.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="Before you send it">
+      <h3 class="section-heading">Before You Send It</h3>
+      <p>Your AI will mark anything it drafted from your project rather than from your own words:</p>
+
+      <div class="prompt-block prompt-block--warn">
+        <pre><code>[AI-DRAFTED — confirm or rewrite]</code></pre>
+      </div>
+
+      <p><strong>Resolve every one of those before sending.</strong> They cluster in the open questions and the spicy take, which are exactly the parts the room will hold you to — and this goes on a public site under your name. A draft that reads well can still be putting an opinion in your mouth.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="Send it">
+      <h3 class="section-heading">Step Two — Send It</h3>
+      <p>Email it to <a href="mailto:Adam.Gautsch@atdc.org">Adam.Gautsch@atdc.org</a>.</p>
+      <p>If you're a GitHub person, you can open a pull request against the site instead — same file, and it goes straight into the queue. Either route is equally welcome; the email is not the lesser option.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="We find a date">
+      <h3 class="section-heading">Step Three — We Find a Date</h3>
+      <p>Adam reads every pre-read and follows up. Sessions get scheduled for a mix of topics week to week, so a finished pre-read doesn't guarantee a specific Monday — but everyone who speaks has one, and having yours written puts you at the front of the line.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="What makes a good pre-read">
+      <h3 class="section-heading">What Makes a Good Pre-Read</h3>
+      <ul>
+        <li><strong>A real question you're stuck on.</strong> Not a status update, not a pitch.</li>
+        <li><strong>Honest about what isn't working.</strong> This is the section the room values most.</li>
+        <li><strong>Short.</strong> Bullets and half-sentences are perfect. One page, hard stop.</li>
+        <li><strong>Jargon-free.</strong> The room is technically strong but nobody knows your vertical.</li>
+        <li><strong>One spicy take.</strong> Optional, but it's usually where the best conversation starts.</li>
+      </ul>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="involve-section" aria-label="Not ready to present">
+      <h3 class="section-heading">Not Ready to Present?</h3>
+      <p>Just come on a Monday. No RSVP.</p>
+
+      <div class="info-callout">
+        <div class="info-item">
+          <span class="label">When</span>
+          <span>Mondays, 8:30 – 10:00 am</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Where</span>
+          <span>ATDC · <a href="https://maps.google.com/?q=75+5th+St+NW+Suite+2230+Atlanta+GA+30308" target="_blank" rel="noopener">75 5th St NW, Suite 2230, Atlanta, GA 30308</a></span>
+        </div>
+      </div>
+
+      <p>Most speakers came for a few weeks first.</p>
+    </section>
+
+  </div>
+
+{{ end }}
