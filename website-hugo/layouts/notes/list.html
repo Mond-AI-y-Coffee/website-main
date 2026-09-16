@@ -1,10 +1,12 @@
 {{ define "main" }}
 
-{{ $todayStr := now.Format "2006-01-02" }}
+{{/* Same rule as the homepage's Next Meeting: a meeting stays upcoming until it
+     ends at 10:00 am Atlanta time. Comparing calendar dates kept a Monday meeting
+     "upcoming" through the post-coffee rebuild, and then for a whole week. */}}
 {{ $upcoming := slice }}
 {{ $past := slice }}
 {{ range .Pages }}
-  {{ if ge (.Date.Format "2006-01-02") $todayStr }}
+  {{ if now.Before (.Date.Add (time.Duration "hour" 10)) }}
     {{ $upcoming = $upcoming | append . }}
   {{ else }}
     {{ $past = $past | append . }}
@@ -12,6 +14,13 @@
 {{ end }}
 
 {{ if or $upcoming $past }}
+
+  {{ if not $upcoming }}
+  <section class="notes-list" aria-label="Upcoming meetings">
+    <h3 class="notes-list-heading">Upcoming Meetings</h3>
+    <p class="notes-empty">The next meeting hasn't been announced yet. <a href="/speak/">Want to present?</a></p>
+  </section>
+  {{ end }}
 
   {{ if $upcoming }}
   <section class="notes-list" aria-label="Upcoming meetings">
