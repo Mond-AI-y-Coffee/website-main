@@ -1,0 +1,2 @@
+{{/* Empty legacy meeting containers contain only a Meeting Notes heading. */}}
+{{ return (ne (trim (replaceRE `(?m)^\s*#{1,6}\s+Meeting Notes\s*$` "" .RawContent) " \n\r\t") "") }}

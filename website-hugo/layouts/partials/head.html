@@ -1,6 +1,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{ $title := cond .IsHome (printf "%s · Atlanta's Weekly AI Meetup" .Site.Title) (printf "%s · %s" .Title .Site.Title) }}
+{{ $pageTitle := partial "page-title.html" . }}
+{{ $title := cond .IsHome (printf "%s · Atlanta's Weekly AI Meetup" .Site.Title) (printf "%s · %s" $pageTitle .Site.Title) }}
 {{ $siteDescription := .Site.Params.description | default "A free weekly coffee meetup for AI builders and curious minds in Atlanta." }}
 {{ $description := .Description | default $siteDescription }}
 {{ if and (not .Description) (eq .Kind "page") }}

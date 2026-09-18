@@ -1,0 +1,15 @@
+{{ $prefix := .prefix | default "" }}
+{{ with .page.Fragments.Headings }}
+<details class="reading-contents">
+  <summary>Jump to a section</summary>
+  <nav aria-label="Reading sections">
+    <ul>{{ range . }}
+      {{ if .ID }}<li><a href="#{{ $prefix }}{{ .ID }}">{{ .Title | plainify }}</a></li>{{ end }}
+      {{ range .Headings }}
+        {{ if .ID }}<li><a href="#{{ $prefix }}{{ .ID }}">{{ .Title | plainify }}</a></li>{{ end }}
+        {{ range .Headings }}{{ if .ID }}<li><a href="#{{ $prefix }}{{ .ID }}">{{ .Title | plainify }}</a></li>{{ end }}{{ end }}
+      {{ end }}
+    {{ end }}</ul>
+  </nav>
+</details>
+{{ end }}

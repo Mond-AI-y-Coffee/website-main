@@ -2,7 +2,8 @@
 
   <!-- Next Meeting — auto-pulled from the nearest upcoming notes post.
        A meeting counts as "next" until it ends at 10:00 am Atlanta time, so the
-       homepage shows today's meeting all morning, then rolls to the following week. -->
+       homepage shows today's meeting all morning, then rolls to the following week.
+       When nothing is upcoming the card is omitted entirely, as before. -->
   {{ $next := false }}
   {{ range (where site.RegularPages "Section" "notes").ByDate }}
     {{ $meetingEnd := .Date.Add (time.Duration "hour" 10) }}
@@ -10,52 +11,105 @@
       {{ $next = . }}
     {{ end }}
   {{ end }}
+
   {{ if $next }}
   {{ $nextDateStr := $next.Date.Format "2006-01-02" }}
   {{ $nextProjects := where (where site.RegularPages "Section" "projects") ".Params.presentation_date" $nextDateStr }}
   {{ $nextProjects = sort $nextProjects "Params.presentation_time" "asc" }}
-  <section class="next-meeting" aria-label="Next meeting details">
-    <h3>Next Meeting</h3>
-    <div class="meeting-date">{{ $next.Date.Format "Monday, January 2" }}</div>
-    <p class="presenter-line">
-      <strong>Presenting:</strong>
-      {{ if $nextProjects }}
-        {{ range $i, $p := $nextProjects }}{{ if $i }} &amp; {{ end }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end }}
-      {{ else }}
-        {{ range $next.Params.speakers }}
-        {{ if $next.Params.speaker_url }}<a href="{{ $next.Params.speaker_url }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+
+  {{/* A holiday project ("No Meeting — Labor Day") stands in for the session.
+       It keeps its own copy and drops the logistics, since there is nothing to
+       show up to. */}}
+  {{ $holiday := false }}
+  {{ range $nextProjects }}
+    {{ if eq .Params.project_type "holiday" }}{{ $holiday = . }}{{ end }}
+  {{ end }}
+
+  <section class="meeting-card" aria-labelledby="next-meeting-label">
+    <p class="meeting-card__label" id="next-meeting-label">Next Meeting</p>
+    <p class="meeting-card__date"><a href="{{ $next.RelPermalink }}">{{ $next.Date.Format "Monday, January 2" }}</a></p>
+
+    {{ if $holiday }}
+      <p class="meeting-card__note">{{ $holiday.Title }}</p>
+      <div class="meeting-card__actions">
+        <a class="button" href="{{ $next.RelPermalink }}">See the details</a>
+      </div>
+    {{ else }}
+      <p class="meeting-card__time">{{ site.Params.meeting_time }}</p>
+
+      <div class="meeting-card__facts">
+        {{ if $nextProjects }}
+        <div class="meeting-card__fact">
+          <span class="meeting-card__term">Topic</span>
+          <p class="meeting-card__def">
+            {{ range $i, $p := $nextProjects }}{{ if $i }} &amp; {{ end }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end }}
+          </p>
+        </div>
+
+        {{/* Speakers come from the project's member list; fall back to the
+             note's own speaker fields when a project has none. */}}
+        {{ $speakers := slice }}
+        {{ range $nextProjects }}
+          {{ range .Params.members }}
+            {{ $m := site.GetPage (printf "/members/%s" .) }}
+            {{ if $m }}{{ $speakers = $speakers | append $m }}{{ end }}
+          {{ end }}
         {{ end }}
-        {{ with $next.Params.company }}
-        —
-        {{ if $next.Params.company_url }}<a href="{{ $next.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+        {{ if $speakers }}
+        <div class="meeting-card__fact">
+          <span class="meeting-card__term">Speaker</span>
+          <p class="meeting-card__def">
+            {{ range $i, $m := $speakers }}{{ if $i }} &amp; {{ end }}<a href="{{ $m.RelPermalink }}">{{ $m.Title }}</a>{{ with $m.Params.company }}<span class="meeting-card__company"> · {{ . }}</span>{{ end }}{{ end }}
+          </p>
+        </div>
         {{ end }}
-      {{ end }}
-    </p>
+        {{ else if $next.Params.speakers }}
+        <div class="meeting-card__fact">
+          <span class="meeting-card__term">Speaker</span>
+          <p class="meeting-card__def">
+            {{ range $i, $name := $next.Params.speakers }}{{ if $i }}, {{ end }}{{ if $next.Params.speaker_url }}<a href="{{ $next.Params.speaker_url }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}{{ end }}
+            {{ with $next.Params.company }} · {{ if $next.Params.company_url }}<a href="{{ $next.Params.company_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ else }}{{ . }}{{ end }}{{ end }}
+          </p>
+        </div>
+        {{ end }}
+
+        <div class="meeting-card__fact">
+          <span class="meeting-card__term">Where</span>
+          <p class="meeting-card__def">
+            {{ site.Params.venue_name }} · {{ site.Params.venue_address }}
+          </p>
+        </div>
+      </div>
+
+      <p class="meeting-card__meta">Free · No RSVP · First-timers welcome</p>
+
+      <div class="meeting-card__actions">
+        {{ $preread := false }}
+        {{ range $nextProjects }}{{ if not $preread }}{{ $preread = . }}{{ end }}{{ end }}
+        {{ if $preread }}
+        <a class="button button--primary" href="{{ $preread.RelPermalink }}">Read the pre-read</a>
+        {{ end }}
+        <a class="button" href="{{ site.Params.venue_map }}" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    {{ end }}
   </section>
   {{ end }}
 
-  <!-- The Basics -->
-  <section class="basics" aria-label="Meetup details">
-    <div class="basics-item">
-      <div class="label">What</div>
-      <p>A weekly coffee meetup for AI builders and those who want to learn</p>
+  <!-- What a first-timer still needs after the card. Three blocks, three
+       columns — the old four-up grid left "Why" orphaned on its own row, and
+       "What" only repeated the tagline above it. -->
+  <section class="first-timer" aria-label="Coming for the first time">
+    <div class="first-timer__item">
+      <p class="first-timer__label">First time?</p>
+      <p>Just show up. No RSVP, no fee. Grab a coffee and find a seat.</p>
     </div>
-    <div class="basics-item">
-      <div class="label">When</div>
-      <p>Mondays, 8:30 – 10:00 am</p>
+    <div class="first-timer__item">
+      <p class="first-timer__label">Why</p>
+      <p>It's time to build cool things.</p>
     </div>
-    <div class="basics-item">
-      <div class="label">Where</div>
-      <p>
-        ATDC<br />
-        <a href="https://maps.google.com/?q=75+5th+St+NW+Suite+2230+Atlanta+GA+30308" target="_blank" rel="noopener">
-          75 5th St NW, Suite 2230<br />Atlanta, GA 30308
-        </a>
-      </p>
-    </div>
-    <div class="basics-item">
-      <div class="label">Why</div>
-      <p>It's time to build cool things</p>
+    <div class="first-timer__item">
+      <p class="first-timer__label">Ask us</p>
+      <p>Email <a href="mailto:Adam.Gautsch@atdc.org">Adam.Gautsch@atdc.org</a>, or <a href="/speak/">pitch a talk</a>.</p>
     </div>
   </section>
 

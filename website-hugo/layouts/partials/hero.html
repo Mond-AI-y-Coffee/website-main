@@ -1,7 +1,16 @@
+{{- if .IsHome -}}
 <header class="hero">
   <h1>Mond<span class="ai-bracket">(AI)</span>y Coffee</h1>
-  <h2 class="tagline">{{ .Params.tagline }}</h2>
-  {{ if .IsHome }}
-  <p class="hero-contact">For more information or to get involved reach out to <a href="mailto:Adam.Gautsch@atdc.org" title="Well get something more than email. Soon. Maybe.">Adam.Gautsch@atdc.org</a></p>
-  {{ end }}
+  {{ with .Params.tagline }}<h2 class="tagline">{{ . }}</h2>{{ end }}
 </header>
+{{- else -}}
+{{- /* Interior pages: a compact linked wordmark, then a page-specific H1.
+       The 99px homepage wordmark used to repeat here and push real content
+       past 545px. The tagline only renders when the page actually has one —
+       an empty <h2 class="tagline"> was leaving a blank heading behind. */ -}}
+<header class="page-header">
+  <a class="brand-compact" href="/">Mond<span class="ai-bracket">(AI)</span>y Coffee</a>
+  <h1 class="page-title">{{ partial "page-title.html" . }}</h1>
+  {{ with .Params.tagline }}<p class="page-tagline">{{ . }}</p>{{ end }}
+</header>
+{{- end -}}

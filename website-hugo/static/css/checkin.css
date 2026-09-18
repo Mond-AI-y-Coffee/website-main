@@ -144,7 +144,7 @@
 }
 
 .checkin__toast--duplicate {
-  color: var(--amber);
+  color: var(--link);
 }
 
 .checkin__toast--error {

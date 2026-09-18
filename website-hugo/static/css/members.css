@@ -48,7 +48,7 @@
 .member-passport__brand {
   font-family: 'Cooper Black', serif;
   font-size: 0.7rem;
-  color: var(--amber);
+  color: var(--link);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -69,9 +69,9 @@
 
 .member-passport__name {
   font-family: 'Cooper Black', serif;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   color: var(--brown);
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 0.3rem;
 }
 
@@ -122,7 +122,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--link);
   text-decoration: none;
   transition: color 0.15s;
 }
@@ -156,7 +156,7 @@
   display: flex;
   flex-direction: column;
   font-size: 0.875rem;
-  color: var(--amber);
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -201,51 +201,110 @@
 
 /* ── Members Directory ──────────────────────────────────────── */
 
+/* Name filter. Hidden until its script runs, so without JavaScript the
+   directory is just an alphabetical list of working links. */
+#member-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  margin-top: var(--space-2);
+}
+
+#member-filter label {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--link);
+}
+
+#member-search {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--espresso);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.4rem 0.7rem;
+  min-width: 14rem;
+  flex: 1 1 14rem;
+  max-width: 22rem;
+}
+
+#member-search:hover {
+  border-color: var(--link);
+}
+
+#member-count {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  flex-basis: 100%;
+}
+
 .members-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.25rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: var(--space-3);
+  align-content: start;
 }
 
 .members-card {
-  display: block;
+  /* A column, so a sparse profile ends with its CTA pinned to the bottom
+     instead of leaving a ragged hole where a role line would have been. */
+  display: flex;
+  flex-direction: column;
+  color: inherit;
   background: var(--cream);
   border: 1.5px solid var(--rule);
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1.1rem 1.15rem;
   text-decoration: none;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-.members-card:hover {
-  border-color: var(--amber);
+/* `.members-card` sets display, which beats the browser's [hidden] rule —
+   without this the name filter marks cards hidden and nothing disappears. */
+.members-card[hidden] {
+  display: none;
+}
+
+.members-card:hover,
+.members-card:focus-visible {
+  border-color: var(--link);
   box-shadow: 0 4px 16px rgba(30, 18, 8, 0.08);
 }
 
 .members-card__name {
   font-family: 'Cooper Black', serif;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
+  line-height: 1.25;
   color: var(--brown);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .members-card__role {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
   color: var(--muted);
   margin-bottom: 0.15rem;
 }
 
 .members-card__location {
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .members-card__cta {
-  font-size: 0.75rem;
-  color: var(--amber);
+  font-size: 0.72rem;
+  color: var(--link);
   letter-spacing: 0.05em;
+  /* Pins the CTA to the bottom of every card, however much is above it. */
+  margin-top: auto;
+  padding-top: 0.75rem;
 }

@@ -30,8 +30,16 @@
 }
 
 .site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--link);
+}
+
+/* Current page is marked by weight + underline, not hue alone. */
 .site-nav a[aria-current="page"] {
-  color: var(--amber);
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4em;
 }
 
 /* Hamburger button — hidden on desktop */
@@ -60,8 +68,9 @@
 }
 
 .nav-toggle:hover .nav-toggle__bar,
+.nav-toggle:focus-visible .nav-toggle__bar,
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar {
-  background: var(--amber);
+  background: var(--link);
 }
 
 /* Bars animate to X when open (7px = gap 5px + bar height 2px) */
@@ -76,10 +85,10 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ── Hero ───────────────────────────────────────────────────── */
+/* ── Hero (homepage only) ───────────────────────────────────── */
 .hero {
-  padding-top: 5rem;
-  padding-bottom: 3rem;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
   position: relative;
   animation: fadeUp 0.7s ease both;
 }
@@ -107,123 +116,285 @@ h2.tagline {
   line-height: 1.55;
 }
 
-.hero-contact {
-  margin-top: 1.25rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-  border-top: 1px solid var(--rule);
-  padding-top: 1rem;
-  max-width: 480px;
+/* ── Interior page header ───────────────────────────────────── */
+/* The expressive wordmark is the homepage's. Every other page gets a compact
+   linked wordmark and a page-specific H1, so real content starts near the top. */
+.page-header {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-2);
+  animation: fadeUp 0.7s ease both;
 }
 
-.hero-contact a {
-  color: var(--amber);
+.brand-compact {
+  display: inline-block;
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--espresso);
   text-decoration: none;
+  margin-bottom: var(--space-1);
 }
 
-.hero-contact a:hover {
-  text-decoration: underline;
+.brand-compact .ai-bracket { color: var(--amber); }
+
+.brand-compact:hover { color: var(--link); }
+
+.page-title {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--espresso);
+  margin: 0;
+}
+
+.page-tagline {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--brown);
+  max-width: 520px;
+  margin-top: 0.35rem;
+}
+
+/* The divider under either header is a hairline, not a section break. */
+.hero + .rule,
+.page-header + .rule {
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.page-header + .rule {
+  border-top-width: 1px;
 }
 
 /* ── Divider ────────────────────────────────────────────────── */
 .rule {
   border: none;
   border-top: 2px solid var(--rule);
-  margin: 2.5rem 0;
+  margin: var(--space-4) 0;
   animation: fadeUp 0.7s 0.15s ease both;
 }
 
-/* ── Next Meeting ───────────────────────────────────────────── */
-.next-meeting {
+/* ── Next Meeting card ──────────────────────────────────────── */
+/* The homepage's focal point: everything you need to decide whether to show up
+   on Monday, in one block, above the fold at 1440x900 and 390x844. */
+.meeting-card {
   background: var(--brown);
   color: var(--cream);
   border-radius: 4px;
-  padding: 2.25rem 2.5rem;
-  margin-bottom: 3rem;
+  padding: var(--space-4) var(--space-4);
+  margin-bottom: var(--space-4);
   position: relative;
   overflow: hidden;
   animation: fadeUp 0.7s 0.25s ease both;
 }
 
-.next-meeting h3 {
+.meeting-card__label {
   font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
   font-weight: 400;
   color: var(--gold);
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
-.next-meeting .meeting-date {
+.meeting-card__date {
   font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
   font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 400;
   line-height: 1.1;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.15rem;
   color: #fff;
 }
 
-.presenter-line {
-  font-size: 1rem;
-  color: rgba(245,240,232,0.85);
-}
-
-.presenter-line strong {
-  color: #fff;
-  font-weight: 500;
-}
-
-.presenter-line a {
-  color: var(--gold);
+.meeting-card__date a {
+  color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid rgba(232,160,32,0.4);
-  transition: border-color 0.2s;
 }
 
-.presenter-line a:hover {
+.meeting-card__date a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.meeting-card__time {
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.92);
+  margin-bottom: var(--space-2);
+}
+
+.meeting-card__facts {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 var(--space-2);
+}
+
+.meeting-card__fact {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+  font-size: 0.95rem;
+}
+
+.meeting-card__term {
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.meeting-card__def {
+  margin: 0;
+  color: rgba(245, 240, 232, 0.92);
+  line-height: 1.5;
+}
+
+.meeting-card__def a {
+  color: var(--link-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.meeting-card__def a:hover {
+  color: #fff;
+}
+
+.meeting-card__meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.8);
+  padding-top: var(--space-2);
+  border-top: 1px solid rgba(232, 160, 32, 0.35);
+}
+
+.meeting-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: var(--space-2);
+}
+
+.meeting-card__note {
+  font-size: 0.95rem;
+  color: rgba(245, 240, 232, 0.92);
+  max-width: 44ch;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+/* One button system. The base is for cream backgrounds; the dark meeting card
+   swaps in gold, where the amber would disappear. */
+.button {
+  display: inline-block;
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 3px;
+  border: 1px solid var(--link);
+  background: none;
+  color: var(--link);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.button:hover {
+  background: rgba(156, 88, 6, 0.1);
+  color: var(--link-hover);
+  border-color: var(--link-hover);
+}
+
+.button--primary {
+  background: var(--link);
+  border-color: var(--link);
+  color: var(--cream);
+}
+
+.button--primary:hover {
+  background: var(--link-hover);
+  border-color: var(--link-hover);
+  color: var(--cream);
+}
+
+.meeting-card .button {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.meeting-card .button:hover {
+  background: rgba(232, 160, 32, 0.15);
+  color: #fff;
   border-color: var(--gold);
 }
 
-/* ── Basics Grid ────────────────────────────────────────────── */
-.basics {
+.meeting-card .button--primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--brown);
+}
+
+.meeting-card .button--primary:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--brown);
+}
+
+/* ── First-timer strip ──────────────────────────────────────── */
+/* Three blocks, three columns — never a lone orphan on a second row. The
+   logistics that used to live here are now inside the meeting card. */
+.first-timer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
   animation: fadeUp 0.7s 0.4s ease both;
 }
 
-.basics-item {
-  border-top: 3px solid var(--amber);
-  padding-top: 1rem;
+@media (min-width: 760px) {
+  .first-timer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.basics-item .label {
+.first-timer__item {
+  border-top: 3px solid var(--amber);
+  padding-top: var(--space-2);
+}
+
+.first-timer__label {
   font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.4rem;
+  color: var(--link);
+  margin-bottom: 0.25rem;
 }
 
-.basics-item p {
+.first-timer__item p {
   font-size: 0.95rem;
   color: var(--brown);
   line-height: 1.55;
 }
 
-.basics-item a {
-  color: var(--amber);
-  text-decoration: none;
+.first-timer__item a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
-.basics-item a:hover {
-  text-decoration: underline;
+.first-timer__item a:hover {
+  color: var(--link-hover);
 }
 
 /* ── Footer ─────────────────────────────────────────────────── */
 footer {
-  margin-top: 5rem;
+  margin-top: var(--space-6);
   padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
   font-size: 0.8rem;
@@ -233,12 +404,13 @@ footer {
 }
 
 footer a {
-  color: var(--amber);
-  text-decoration: none;
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: var(--link-hover);
 }
 
 /* ── About Page ─────────────────────────────────────────────── */
@@ -268,12 +440,13 @@ footer a:hover {
 }
 
 .about-body a {
-  color: var(--amber);
-  text-decoration: none;
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .about-body a:hover {
-  text-decoration: underline;
+  color: var(--link-hover);
 }
 
 .about-photo {
@@ -333,18 +506,19 @@ footer a:hover {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--link);
   flex-shrink: 0;
   width: 3.5rem;
 }
 
 .info-item a {
-  color: var(--amber);
-  text-decoration: none;
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .info-item a:hover {
-  text-decoration: underline;
+  color: var(--link-hover);
 }
 
 /* ── Members Grid ───────────────────────────────────────────── */
@@ -368,8 +542,9 @@ footer a:hover {
   transition: border-color 0.2s, background 0.2s;
 }
 
-.member-card:hover {
-  border-color: var(--amber);
+.member-card:hover,
+.member-card:focus-visible {
+  border-color: var(--link);
   background: rgba(200,117,10,0.04);
 }
 
@@ -457,6 +632,16 @@ details[open] .faq-question::after {
   transform: rotate(45deg);
 }
 
+.faq-answer a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.faq-answer a:hover {
+  color: var(--link-hover);
+}
+
 .faq-answer {
   font-size: 0.95rem;
   color: var(--brown);
@@ -513,9 +698,28 @@ details[open] .faq-question::after {
   }
 
   /* Next Meeting card */
-  .next-meeting {
-    padding: 1.5rem 1.25rem;
-    margin-bottom: 2rem;
+  .meeting-card {
+    padding: var(--space-3) var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .meeting-card__fact {
+    grid-template-columns: 4rem 1fr;
+    gap: 0.25rem 0.6rem;
+  }
+
+  /* One line instead of two at phone width. */
+  .meeting-card__meta {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+
+  .first-timer {
+    gap: var(--space-2);
+  }
+
+  .first-timer__item {
+    padding-top: 0.75rem;
   }
 
   /* About float image */
@@ -526,23 +730,25 @@ details[open] .faq-question::after {
   }
 
   /* Dividers + footer spacing */
-  .rule { margin: 1.75rem 0; }
-  footer { margin-top: 3rem; }
+  .rule { margin: var(--space-3) 0; }
+  .page-header + .rule { margin: var(--space-2) 0 var(--space-3); }
+  footer { margin-top: var(--space-4); }
 }
 
 /* — 480px: padding & hero reduction — */
 @media (max-width: 480px) {
 
   .hero {
-    padding-top: 2.5rem;
-    padding-bottom: 1.75rem;
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-2);
+  }
+
+  .page-header {
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-2);
   }
 
   /* Force single-column grids */
-  .basics {
-    grid-template-columns: 1fr;
-  }
-
   #members-grid {
     grid-template-columns: 1fr;
   }
@@ -577,7 +783,7 @@ details[open] .faq-question::after {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--link);
   margin-bottom: 0.6rem;
 }
 
@@ -597,4 +803,52 @@ details[open] .faq-question::after {
 .prompt-block--warn {
   border-left-color: var(--muted);
   background: rgba(122, 92, 58, 0.08);
+}
+
+/* Copy-the-prompt control. The button stays hidden until its script runs, so a
+   no-JS visitor sees the prompt text and selects it by hand. */
+.prompt-block__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.prompt-block__status {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.prompt-block__status:empty {
+  display: none;
+}
+
+/* Compact three-step summary above the prompt. */
+.speak-summary {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-2);
+  max-width: 640px;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.speak-summary li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  align-items: baseline;
+  font-size: 0.95rem;
+  color: var(--brown);
+  line-height: 1.5;
+}
+
+.speak-summary li::before {
+  content: counter(step);
+  font-family: 'Cooper Black', 'Cooper Std', 'Rockwell Extra Bold', serif;
+  font-size: 0.75rem;
+  color: var(--link);
 }

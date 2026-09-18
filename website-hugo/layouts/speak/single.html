@@ -2,6 +2,25 @@
 
   <div class="about-body">
 
+    <section class="involve-section" aria-label="Start your pre-read">
+      <h2 class="section-heading">Find your talk</h2>
+      <ol class="speak-summary">
+        <li>Give your AI the prompt below, pointed at your work.</li>
+        <li>Pick one of its three candidate talks and review the draft.</li>
+        <li>Email your pre-read to Adam to find a Monday.</li>
+      </ol>
+      <div class="prompt-block">
+        <span class="prompt-block__label">Prompt</span>
+        <pre tabindex="0" id="speaker-prompt-block"><code id="speaker-prompt">Read https://mondaiycoffee.com/pre-read.md. Then look through this project and help me work out what's worth presenting at Mond(ai)y Coffee.</code></pre>
+        <div class="prompt-block__actions">
+          <button id="copy-prompt" class="button" type="button" hidden>Copy prompt</button>
+          <span id="copy-status" class="prompt-block__status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <p><strong>Before sending:</strong> confirm or rewrite every <code>[AI-DRAFTED]</code> opinion so the pre-read represents your own words.</p>
+      <p><a href="mailto:Adam.Gautsch@atdc.org?subject=Mond(ai)y%20Coffee%20pre-read">Email your reviewed pre-read to Adam</a> · <a href="/pre-read.md">Write it yourself with the guide</a></p>
+    </section>
+
     <section class="involve-section" aria-label="Want to speak">
       <h3 class="section-heading">Want to Speak?</h3>
       <p><strong>Start with the pre-read.</strong> It's one page, it takes about ten minutes, and it's how speaking dates get assigned.</p>
@@ -37,12 +56,7 @@
       <p>The useful version of this isn't a questionnaire. It's letting something that has actually read your work tell you which part of it a room would find interesting — because you're too close to it to see that yourself.</p>
       <p>Open your project in whatever agent you use — Claude Code, Codex, Cursor, Copilot — and paste this:</p>
 
-      <div class="prompt-block">
-        <span class="prompt-block__label">Prompt</span>
-        <pre><code>Read https://mondaiycoffee.com/pre-read.md. Then look through
-this project and help me work out what's worth presenting at
-Mond(ai)y Coffee.</code></pre>
-      </div>
+      <p><a href="#speaker-prompt-block">Use the prompt above</a> with your project files or a link to your work.</p>
 
       <p>It'll read what you're building, come back with three candidate talks, and argue with you about which one is real. Then it asks the handful of questions it can't answer from your files, and hands you a finished markdown file.</p>
       <p><strong>Not working out of a folder?</strong> The same prompt works in Claude, ChatGPT, or Gemini — give it a public repo link, a design doc, or your notes instead. It works with less. It just works better with more.</p>
@@ -113,3 +127,5 @@ Mond(ai)y Coffee.</code></pre>
   </div>
 
 {{ end }}
+
+{{ define "scripts" }}<script src="/js/copy-prompt.js"></script>{{ end }}

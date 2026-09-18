@@ -25,10 +25,51 @@ body {
   padding: 0 2rem 6rem;
 }
 
+/* Links — anything that does not opt out gets the accessible amber. */
+a { color: var(--link); }
+
+/* Keyboard focus. Visible on every interactive element, not just links, and
+   never removed on click-focus (:focus-visible handles that distinction). */
+:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* On the dark meeting panel the amber outline disappears — use gold there. */
+.meeting-card :focus-visible,
+.next-meeting :focus-visible {
+  outline-color: var(--link-dark);
+}
+
+/* Skip link — first tab stop, visible only when focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--espresso);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 /* Animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 @media (max-width: 480px) {

@@ -7,4 +7,20 @@
   --gold:     #e8a020;
   --muted:    #7a5c3a;
   --rule:     #c9b89a;
+
+  /* Text-link amber. #c8750a is 3.08:1 on cream — fine for the wordmark and
+     large display type, short of 4.5:1 for normal-size text. This darker step
+     measures 4.86:1 on cream and stays in the same amber family. */
+  --link:       #9c5806;
+  --link-hover: #6b3c04;
+  /* Link colour for the dark espresso/brown panels (gold is 6.8:1 there). */
+  --link-dark:  var(--gold);
+
+  /* Spacing scale — one ladder, used for section rhythm everywhere. */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
 }

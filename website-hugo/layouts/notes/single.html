@@ -3,17 +3,21 @@
   {{ $dateStr := .Date.Format "2006-01-02" }}
   {{ $projects := where (where site.RegularPages "Section" "projects") ".Params.presentation_date" $dateStr }}
   {{ $projects = sort $projects "Params.presentation_time" "asc" }}
+  {{ $hasRecap := partial "has-recap.html" . }}
 
   <div class="meeting-layout{{ if $projects }} meeting-layout--has-toc{{ end }}">
 
     <article class="notes-post">
 
+      {{/* The page header (partials/hero.html) is the H1 for this page and
+           already names the date, so this block carries only the speakers. */}}
+      {{ with .Params.speakers }}
       <header class="notes-header">
-        {{ range .Params.speakers }}
+        {{ range . }}
         <div class="notes-speaker">{{ . }}</div>
         {{ end }}
-        <div class="notes-date">{{ .Date.Format "Monday, January 2, 2006" }}</div>
       </header>
+      {{ end }}
 
       {{ if $projects }}
         {{ range $projects }}
@@ -32,8 +36,11 @@
             </p>
             {{ end }}
           </div>
+          <p class="notes-date">{{ if eq .Params.project_type "holiday" }}No meeting{{ else }}Pre-read{{ end }}</p>
+          {{ $prefix := printf "%s-" .File.ContentBaseName }}
+          {{ partial "reading-contents.html" (dict "page" . "prefix" $prefix) }}
           <div class="notes-content about-body">
-            {{ .Content }}
+            {{ .Content | replaceRE `id="([^"]+)"` (printf `id="%s${1}"` $prefix) | replaceRE `href="#([^"]+)"` (printf `href="#%s${1}"` $prefix) | safeHTML }}
           </div>
         </div>
         {{ end }}
@@ -64,12 +71,13 @@
         {{ end }}
       {{ end }}
 
-      {{ with .Content }}
+      {{ if $hasRecap }}
       <div id="meeting-notes" class="notes-content about-body">
-        {{ . }}
+        {{ .Content }}
       </div>
       {{ end }}
 
+      <p><a href="/notes/">← All meetings</a></p>
     </article>
 
     {{ if $projects }}
@@ -82,9 +90,9 @@
             <a class="meeting-toc__link" href="#{{ .File.ContentBaseName }}">{{ .Title }}</a>
           </li>
           {{ end }}
-          <li class="meeting-toc__item">
+          {{ if $hasRecap }}<li class="meeting-toc__item">
             <a class="meeting-toc__link" href="#meeting-notes">Meeting Notes</a>
-          </li>
+          </li>{{ end }}
         </ul>
       </div>
     </nav>

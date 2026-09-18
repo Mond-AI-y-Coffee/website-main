@@ -1,5 +1,3 @@
-{{ define "hero" }}{{ end }}
-
 {{ define "main" }}
   {{ $slug := .File.ContentBaseName }}
   {{ $allProjects := where site.RegularPages "Section" "projects" }}
@@ -53,7 +51,7 @@
         </div>
 
         <div class="member-passport__identity">
-          <h1 class="member-passport__name">{{ .Title }}</h1>
+          <p class="member-passport__name">{{ .Title }}</p>
           {{ with .Params.role }}<p class="member-passport__role">{{ . }}{{ with $.Params.company }} · {{ . }}{{ end }}</p>{{ end }}
           {{ with .Params.location }}<p class="member-passport__location">{{ . }}</p>{{ end }}
         </div>
@@ -65,7 +63,7 @@
             width="140"
             height="140"
           />
-          <p class="member-passport__qr-label">Scan to connect</p>
+          <p class="member-passport__qr-label">Your community passport: a profile to share and a record of your participation. Scan to connect.</p>
         </div>
 
         {{ if or .Params.linkedin .Params.github .Params.website }}

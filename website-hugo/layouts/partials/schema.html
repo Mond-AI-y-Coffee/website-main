@@ -131,7 +131,7 @@
     {{ if $sectionPage }}
       {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" $sectionPage.Title "item" $sectionPage.Permalink) }}
       {{ if .IsPage }}
-        {{ $items = $items | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) }}
+        {{ $items = $items | append (dict "@type" "ListItem" "position" 3 "name" (partial "page-title.html" .) "item" .Permalink) }}
       {{ end }}
     {{ else }}
       {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) }}

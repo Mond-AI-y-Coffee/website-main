@@ -1,0 +1,25 @@
+{{ $page := .page }}
+{{ $projects := sort (where (where site.RegularPages "Section" "projects") ".Params.presentation_date" ($page.Date.Format "2006-01-02")) "Params.presentation_time" "asc" }}
+{{ $holiday := gt (len (where $projects "Params.project_type" "holiday")) 0 }}
+{{ $label := "Meeting details" }}
+{{ if $holiday }}
+  {{ $label = "No meeting" }}
+{{ else if partial "has-recap.html" $page }}
+  {{ $label = "Read recap" }}
+{{ else if $projects }}
+  {{ $label = "Read pre-read" }}
+{{ end }}
+<div class="notes-list-item{{ if $holiday }} notes-list-item--cancelled{{ end }}">
+  <time class="notes-list-date" datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time>
+  <div>
+    {{ if $projects }}
+      {{ range $projects }}
+      <div><a class="archive-topic" href="{{ $page.RelPermalink }}#{{ .File.ContentBaseName }}">{{ .Title }}</a></div>
+      {{ with .Params.members }}<p class="archive-meta">{{ range $i, $slug := . }}{{ with site.GetPage (printf "/members/%s" $slug) }}{{ if $i }}, {{ end }}{{ .Title }}{{ end }}{{ end }}</p>{{ end }}
+      {{ end }}
+    {{ else }}
+      <a class="archive-topic" href="{{ $page.RelPermalink }}">{{ with $page.Title }}{{ . }}{{ else }}{{ with $page.Params.speakers }}{{ delimit . ", " }}{{ else }}Coffee conversation{{ end }}{{ end }}</a>
+    {{ end }}
+    <a class="notes-list-read" href="{{ $page.RelPermalink }}">{{ $label }}</a>
+  </div>
+</div>

@@ -11,13 +11,16 @@
   <article class="notes-post">
 
     <header class="notes-header">
-      {{ with .Title }}<h1 class="notes-speaker">{{ . }}</h1>{{ end }}
+      <p class="notes-date">{{ if eq .Params.project_type "holiday" }}No meeting{{ else }}Pre-read{{ end }}</p>
+      {{/* The talk title is the page H1 (partials/hero.html). Repeating it here
+           put a 25.2px h1 underneath its own 27px subsection headings. */}}
+      {{ with $members }}<p>{{ range $i, $m := . }}{{ if $i }}, {{ end }}<a href="{{ $m.RelPermalink }}">{{ $m.Title }}</a>{{ end }}</p>{{ end }}
 
       {{ with .Params.presentation_date }}
       {{ $meetingPage := site.GetPage (printf "/notes/%s" .) }}
       <div class="notes-date">
         {{ if $meetingPage }}
-          Presented <a href="{{ $meetingPage.RelPermalink }}">{{ $meetingPage.Date.Format "January 2, 2006" }}</a>
+          Meeting: <a href="{{ $meetingPage.RelPermalink }}">{{ $meetingPage.Date.Format "January 2, 2006" }}</a>
         {{ else }}
           Presenting {{ . }}
         {{ end }}
@@ -31,11 +34,13 @@
     </header>
 
     {{ if .Content }}
+    {{ partial "reading-contents.html" (dict "page" .) }}
     <div class="notes-content about-body">
       {{ .Content }}
     </div>
     {{ end }}
 
+    <p><a href="/notes/">← All meetings</a></p>
   </article>
 
   {{ if $members }}

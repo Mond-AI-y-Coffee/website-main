@@ -1,0 +1,10 @@
+{{- /* One source of truth for a page's human-readable title.
+
+       Meeting pages under /notes/ carry only a date in front matter, so .Title
+       is empty there — which shipped a "<title>· Mond(AI)y Coffee</title>" and a
+       nameless breadcrumb. Build the date into a real title instead. */ -}}
+{{- $t := .Title -}}
+{{- if and .IsPage (eq .Section "notes") -}}
+  {{- $t = .Date.Format "Monday, January 2, 2006" -}}
+{{- end -}}
+{{- return $t -}}
