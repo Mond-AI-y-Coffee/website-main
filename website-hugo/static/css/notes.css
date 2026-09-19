@@ -406,6 +406,12 @@ a.notes-list-date:focus-visible {
   margin-bottom: 1.25rem;
 }
 
+.notes-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ── Speakers Index (/speakers/) ────────────────────────────── */
 .speakers-index {
   animation: fadeUp 0.7s 0.25s ease both;
