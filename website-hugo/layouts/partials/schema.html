@@ -41,8 +41,8 @@
       "name" (printf "Mond(AI)y Coffee - %s" ($next.Date.Format "January 2, 2006"))
       "description" "A free weekly coffee meetup for AI builders and curious minds in Atlanta. No RSVP required."
       "url" $next.Permalink
-      "startDate" (printf "%sT08:30:00-04:00" $date)
-      "endDate" (printf "%sT10:00:00-04:00" $date)
+      "startDate" ((time.AsTime (printf "%sT08:30:00" $date) "America/New_York").Format "2006-01-02T15:04:05Z07:00")
+      "endDate" ((time.AsTime (printf "%sT10:00:00" $date) "America/New_York").Format "2006-01-02T15:04:05Z07:00")
       "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
       "eventStatus" "https://schema.org/EventScheduled"
       "isAccessibleForFree" true
@@ -88,8 +88,8 @@
     "@id" (printf "%s#event" .Permalink)
     "name" (printf "Mond(AI)y Coffee - %s" (.Date.Format "January 2, 2006"))
     "url" .Permalink
-    "startDate" (printf "%sT08:30:00-04:00" (.Date.Format "2006-01-02"))
-    "endDate" (printf "%sT10:00:00-04:00" (.Date.Format "2006-01-02"))
+    "startDate" ((time.AsTime (printf "%sT08:30:00" (.Date.Format "2006-01-02")) "America/New_York").Format "2006-01-02T15:04:05Z07:00")
+    "endDate" ((time.AsTime (printf "%sT10:00:00" (.Date.Format "2006-01-02")) "America/New_York").Format "2006-01-02T15:04:05Z07:00")
     "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
     "eventStatus" "https://schema.org/EventScheduled"
     "isAccessibleForFree" true
