@@ -488,6 +488,10 @@ figcaption {
   margin-top: var(--space-1);
 }
 
+.caption-center figcaption {
+  text-align: center;
+}
+
 .about-clearfix::after {
   content: '';
   display: table;
