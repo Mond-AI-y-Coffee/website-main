@@ -465,6 +465,29 @@ footer a:hover {
   width: 52%;
 }
 
+/* A caption under a placed image — Accent's image components print it as
+   the figure's figcaption (2026-10-29, Ray's pick: the tagline's voice, a
+   step quieter). A captioned figure with no class of its own takes the
+   photo's rhythm; .about-photo keeps its own. */
+figure {
+  margin: 2.5rem 0 3rem;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+figcaption {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: var(--space-1);
+}
+
 .about-clearfix::after {
   content: '';
   display: table;
