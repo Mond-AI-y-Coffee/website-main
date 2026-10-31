@@ -13,10 +13,29 @@
       </div>
       {{ end }}
 
+      {{/* Same rule as the homepage's Next Meeting: a talk is still ahead until its
+           meeting ends at 10:00 am Atlanta time, so the post-coffee rebuild moves it from
+           "Presenting On" to "Presented On". A talk booked before its date is set is ahead too. */}}
+      {{ $upcoming := slice }}
+      {{ $past := slice }}
+      {{ range $presentations }}
+        {{ $over := false }}
+        {{ with .Params.presentation_date }}
+          {{ $over = not (now.Before ((time .).Add (time.Duration "hour" 10))) }}
+        {{ end }}
+        {{ if $over }}
+          {{ $past = $past | append . }}
+        {{ else }}
+          {{ $upcoming = $upcoming | append . }}
+        {{ end }}
+      {{ end }}
+
       {{ if $presentations }}
       <div class="member-presentations">
-        <h3 class="member-presentations__heading">Presented On</h3>
-        {{ range $presentations }}
+        {{ range $group := slice (dict "heading" "Presenting On" "talks" $upcoming) (dict "heading" "Presented On" "talks" $past) }}
+        {{ with $group.talks }}
+        <h3 class="member-presentations__heading">{{ $group.heading }}</h3>
+        {{ range . }}
           {{/* A speaker can be booked before a date is set (new-project.js seeds an empty
                presentation_date), so guard before building the note path — an empty date
                resolves to the /notes/ list page and then blows up in `time`. */}}
@@ -37,6 +56,8 @@
             </span>
             {{ end }}
           </div>
+        {{ end }}
+        {{ end }}
         {{ end }}
       </div>
       {{ end }}
