@@ -152,6 +152,11 @@
   margin-bottom: 0.6rem;
 }
 
+/* A member with a talk ahead and a talk behind gets both headings */
+.member-presentations__item + .member-presentations__heading {
+  margin-top: 1.25rem;
+}
+
 .member-presentations__link {
   display: flex;
   flex-direction: column;
