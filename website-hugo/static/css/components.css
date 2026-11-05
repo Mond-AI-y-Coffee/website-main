@@ -879,3 +879,113 @@ details[open] .faq-question::after {
   font-size: 0.75rem;
   color: var(--link);
 }
+
+/* ── Quote — one component, four looks (2026-11-05, Ray's pick: all four,
+   chosen per quote). layouts/partials/quote.html prints every quote: a
+   markdown `>` quote (hairlines unless an attribute block names another),
+   the quote shortcode, and the home page's panel on a week with no Monday.
+   Hairlines is the base: the tagline's voice a step louder, between the
+   site's hairline rules; the other three override it. */
+blockquote.quote {
+  margin: 2rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+blockquote.quote p {
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--brown);
+  max-width: 640px;
+  margin: 0;
+}
+
+blockquote.quote .quote__by {
+  margin: var(--space-1) 0 0;
+  font-size: 0.9rem;
+  font-style: normal;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+/* Margin: the classic blockquote, an amber rule down the left, the body's voice in italic. */
+blockquote.quote--margin {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem var(--space-3);
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 3px solid var(--amber);
+}
+
+blockquote.quote--margin p {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+blockquote.quote--margin .quote__by {
+  margin-top: 0.35rem;
+}
+
+/* Mark: an opening quotation mark in amber hangs at the left; the words stand upright. */
+blockquote.quote--mark {
+  position: relative;
+  margin: 2.5rem 0 3rem;
+  padding: 0.35rem 0 0 2.5rem;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+blockquote.quote--mark::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: -0.55rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 4.25rem;
+  line-height: 1;
+  color: var(--amber);
+}
+
+blockquote.quote--mark p {
+  font-size: 1.2rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+blockquote.quote--mark .quote__by {
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* Panel: the meeting card's dark slab, cream words, gold attribution. */
+blockquote.quote--panel {
+  margin: 2rem 0;
+  padding: var(--space-3) var(--space-4);
+  border-top: 0;
+  border-bottom: 0;
+  background: var(--brown);
+  color: var(--cream);
+  border-radius: 4px;
+}
+
+blockquote.quote--panel p {
+  color: var(--cream);
+}
+
+blockquote.quote--panel .quote__by {
+  margin-top: 0.75rem;
+  color: var(--gold);
+}
+
+blockquote.quote--panel a {
+  color: var(--link-dark);
+}
+
+/* The home page's quote sits where the meeting card sits and keeps its rhythm. */
+blockquote.quote--home {
+  margin: 0 0 var(--space-4);
+  animation: fadeUp 0.7s 0.25s ease both;
+}

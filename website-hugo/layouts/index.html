@@ -93,6 +93,14 @@
       </div>
     {{ end }}
   </section>
+  {{ else }}
+  {{/* No Monday coming up: the card's place holds a quote from the site's
+       own pages, in the dark panel (data/quotes.yaml, the first entry;
+       2026-11-05, Ray: "if there isn't a meeting coming up let's do D dark
+       panel on the home page"). */}}
+  {{ with index site.Data.quotes 0 }}
+  {{ partial "quote.html" (dict "text" .text "by" .by "source" .source "style" "panel" "class" "quote--home") }}
+  {{ end }}
   {{ end }}
 
   <!-- What a first-timer still needs after the card. Three blocks, three

@@ -16,3 +16,9 @@ disableKinds  = ["taxonomy", "term"]
 
 [markup.goldmark.renderer]
   unsafe = true
+
+# Block attributes, so a markdown quote can pick its look on the line after it:
+#   > quote
+#   {.mark}
+[markup.goldmark.parser.attribute]
+  block = true
