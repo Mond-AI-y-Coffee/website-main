@@ -1,0 +1,11 @@
+{{/* The quote by its explicit door, for a style or an attribution the
+     markdown convention cannot carry (a linked source, a quote inside a list):
+       {{< quote style="mark" by="Bryan Helmig, Co-Founder & CTO, Zapier" source="/projects/how-zapier-ais/" >}}
+       You can delegate the work, but you can't delegate the accountability.
+       {{< /quote >}}
+     style: hairlines (default) · margin · mark · panel. The inner text is markdown. */}}
+{{ partial "quote.html" (dict
+  "text" (.Inner | markdownify)
+  "by" (.Get "by")
+  "style" (.Get "style")
+  "source" (.Get "source")) }}
