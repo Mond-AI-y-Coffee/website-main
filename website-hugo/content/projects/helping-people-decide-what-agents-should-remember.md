@@ -4,11 +4,9 @@ draft: false
 speakers: ["Steven Jefferson"]
 members: ["steven-jefferson"]
 project_type: "speaker"
-presentation_date: "2026-11-30"
 presentation_time: ""
 ---
 
-**Date:** Monday, November 30, 2026  
 **Speaker:** Steven Jefferson — CEO, Larine.dev
 
 ## Who are you?
