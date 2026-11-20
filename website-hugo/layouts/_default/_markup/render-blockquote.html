@@ -1,0 +1,25 @@
+{{/* A markdown quote is the quote component. The last line of the quote,
+     when it opens with an em dash, is the attribution — the convention the
+     Zapier pre-read already uses:
+       > "You can delegate the work, but you can't delegate the accountability."
+       > — Bryan Helmig, Co-Founder & CTO, Zapier
+     The look is picked with an attribute block on the line after the quote,
+     {.margin} {.mark} {.panel}; none means hairlines. (hugo.toml turns on
+     block attributes.) GitHub-style alerts (> [!NOTE]) print as a plain
+     quote; the site has none. */}}
+{{- $text := .Text -}}
+{{- $by := "" -}}
+{{- $pattern := `(?s)\n\s*(—|&mdash;)\s*([^<\n]+?)\s*</p>\s*$` -}}
+{{- if findRE $pattern $text -}}
+  {{/* .Text is HTML already, so the attribution is unescaped here and
+       escaped once by the partial, like a shortcode's. */}}
+  {{- $by = replaceRE (printf `(?s)^.*%s` $pattern) "$2" $text | htmlUnescape -}}
+  {{- $text = replaceRE $pattern "</p>" $text -}}
+{{- end -}}
+{{- $style := "hairlines" -}}
+{{- with .Attributes.class -}}
+  {{- range split . " " -}}
+    {{- if in (slice "hairlines" "margin" "mark" "panel") . }}{{ $style = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{ partial "quote.html" (dict "text" $text "by" $by "style" $style) }}

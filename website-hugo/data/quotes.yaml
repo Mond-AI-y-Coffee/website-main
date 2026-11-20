@@ -1,0 +1,11 @@
+# Quotes the site can feature. The home page prints the FIRST one, in the dark
+# panel, on the days no Monday is coming up (the meeting card's place). Reorder
+# to choose. `source` links the attribution to a page: the speaker's member
+# page, or the pre-read the words came from. Type the quotation marks, as a
+# markdown quote carries them; the mark style sheds them itself.
+- text: "“The most fun I’ve had in AI in a long time.”"
+  by: "Chikamso Anayor Achu, Founder, Agentic Return"
+  source: /members/chikamso-anayor-achu/
+- text: "“You can delegate the work, but you can’t delegate the accountability.”"
+  by: "Bryan Helmig, Co-Founder & CTO, Zapier"
+  source: /projects/how-zapier-ais/

@@ -1,0 +1,26 @@
+{{/* The quote — one component, four looks (2026-11-05, Ray: "I like all of
+     them, we should be able to pick and choose"). Called with a dict:
+       text   the quote's HTML (a <p> or bare text; bare text is wrapped)
+       by     the attribution, one line, printed after an em dash (optional);
+              its own classed paragraph, since the site styles `footer` globally
+       style  hairlines (default) · margin · mark · panel
+       source a page or URL the attribution links to (optional)
+       class  extra classes on the blockquote (optional)
+     The markdown render hook, the quote shortcode and the home page all
+     print through here, so a quote looks the same whichever door it came in. */}}
+{{- $styles := slice "hairlines" "margin" "mark" "panel" -}}
+{{- $style := .style | default "hairlines" -}}
+{{- if not (in $styles $style) }}{{ $style = "hairlines" }}{{ end -}}
+{{- $text := .text | default "" -}}
+{{- if eq $style "mark" -}}
+  {{/* The mark style prints its own opening quotation mark, so a quote typed
+       with curly quotes sheds them here rather than doubling up. */}}
+  {{- $text = $text | replaceRE `^(\s*(<p>)?\s*)(“|&ldquo;)` "$1" | replaceRE `(”|&rdquo;)(\s*(</p>)?\s*)$` "$2" -}}
+{{- end -}}
+{{- if not (findRE `^\s*<p[\s>]` $text) }}{{ $text = printf "<p>%s</p>" $text }}{{ end -}}
+<blockquote class="quote quote--{{ $style }}{{ with .class }} {{ . }}{{ end }}">
+  {{ $text | safeHTML }}
+  {{- with .by }}
+  <p class="quote__by">— {{ with $.source }}<a href="{{ . }}">{{ $.by }}</a>{{ else }}{{ . }}{{ end }}</p>
+  {{- end }}
+</blockquote>
